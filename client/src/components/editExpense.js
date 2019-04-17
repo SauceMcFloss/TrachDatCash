@@ -100,6 +100,11 @@ class EditExpense extends Component {
         }
 		
     }
+	
+	onLogoutClick = e => {
+		e.preventDefault();
+		this.props.logoutUser();
+	};
 
     componentDidMount() {
         axios.get('/expenses/'+this.props.match.params.id)

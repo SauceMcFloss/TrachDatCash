@@ -99,6 +99,10 @@ class CreateExpense extends Component {
         }
     }
 	
+	onLogoutClick = e => {
+		e.preventDefault();
+		this.props.logoutUser();
+	};
 
     onChangeDescription(e) {
         this.setState({
