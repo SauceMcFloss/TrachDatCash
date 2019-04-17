@@ -365,7 +365,7 @@ class TodosList extends Component {
 					["Shopping", this.state.shopping], 
 					["Transportation", this.state.transportation], 
 					["Other", this.state.other]]
-				} colors ={["#f7adce", "#7fd3f7","#c49bdf","#ffde17","#84f2b3","#ffbdbd","#6fc0ab","#ff8b94", "#6eb5ff"]}/>
+				} colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}/>
 	
 			  <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
 				<div className="container">
