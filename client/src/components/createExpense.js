@@ -74,7 +74,7 @@ const optionsDay = [
 ];
 
 
-export default class CreateExpense extends Component {
+class CreateExpense extends Component {
 
     constructor(props) {
         super(props);
@@ -294,3 +294,17 @@ export default class CreateExpense extends Component {
         )
     }
 }
+
+CreateExpense.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(CreateExpense);

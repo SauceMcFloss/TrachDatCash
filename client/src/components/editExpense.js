@@ -73,7 +73,7 @@ const optionsDay = [
   { value: 31, label: 31 }
 ];
 
-export default class EditExpense extends Component {
+class EditExpense extends Component {
 
     constructor(props) {
         super(props);
@@ -304,3 +304,17 @@ export default class EditExpense extends Component {
         )
     }
 }
+
+EditExpense.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(EditExpense);
