@@ -356,7 +356,7 @@ class TodosList extends Component {
 		e.preventDefault();	
 
 		this.setState({
-			  balance: this.state.budget - this.state.total
+			  balance: parseFloat(this.state.budget - this.state.total).toFixed( 2 )
 		});
 	}
 	
@@ -459,7 +459,7 @@ class TodosList extends Component {
 			<center><h5>Budget: ${this.state.budget} </h5></center>
 			<center><h5>Balance: ${this.state.balance} </h5></center>
 			  
-			  <center><h5>Expenses Total: ${this.state.total.toFixed(2)} </h5></center>
+			  <center><h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5></center>
 			  <div className = "divider"/>
 				<div className="container">
 				  <nav className="navbar navbar-expand-sm navbar-light bg-light">
