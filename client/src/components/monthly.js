@@ -457,9 +457,10 @@ class TodosList extends Component {
 			</form>
 				
 			<center><h5>Budget: ${this.state.budget} </h5></center>
+			<center><h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5></center>
+			<center><h5> ---------------------------- </h5></center>
 			<center><h5>Balance: ${this.state.balance} </h5></center>
 			  
-			  <center><h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5></center>
 			  <div className = "divider"/>
 				<div className="container">
 				  <nav className="navbar navbar-expand-sm navbar-light bg-light">
