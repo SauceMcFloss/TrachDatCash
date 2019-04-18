@@ -464,10 +464,12 @@ class TodosList extends Component {
 				<input type="submit" value="Update" className="btn btn-info" /></label>
 			</form>
 			
+			<div className = "spacing">
 			<h5>Budget: ${this.state.budget} </h5>
 			<h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5>
 			<h5> ---------------------------- </h5>
 			<h5>Balance: ${this.state.balance} </h5>
+			</div>
 			  
 			  <div className = "divider"/>
 				<div className="container">
@@ -491,6 +493,7 @@ class TodosList extends Component {
 				  </nav>
 				</div>
 				
+				<div className = "spacing">
                 <table className="table table-striped table-bordered" 
 				  style={{ marginTop: 20 }} >
 				  
@@ -521,6 +524,7 @@ class TodosList extends Component {
                         { this.listOfExpenses() }
                     </tbody>
                 </table>
+				</div>
             </div>
         )
     }
