@@ -321,6 +321,7 @@ class TodosList extends Component {
 				sum = sumBy(temp, 'amount');
                 this.setState({ 
 					expensesArray: temp,
+					balance: parseFloat(this.state.budget - sum).toFixed( 2 ),
 					total: sum
 				});
             })
@@ -356,6 +357,7 @@ class TodosList extends Component {
 		e.preventDefault();	
 
 		this.setState({
+			  budget: parseFloat(this.state.budget).toFixed( 2 ),
 			  balance: parseFloat(this.state.budget - this.state.total).toFixed( 2 )
 		});
 	}
@@ -461,11 +463,11 @@ class TodosList extends Component {
 					onChange={this.onChangeBudget}/>
 				<input type="submit" value="Update" className="btn btn-info" /></label>
 			</form>
-				
-			<center><h5>Budget: ${this.state.budget} </h5></center>
-			<center><h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5></center>
-			<center><h5> ---------------------------- </h5></center>
-			<center><h5>Balance: ${this.state.balance} </h5></center>
+			
+			<h5>Budget: ${this.state.budget} </h5>
+			<h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5>
+			<h5> ---------------------------- </h5>
+			<h5>Balance: ${this.state.balance} </h5>
 			  
 			  <div className = "divider"/>
 				<div className="container">
@@ -488,7 +490,7 @@ class TodosList extends Component {
 					</div>
 				  </nav>
 				</div>
-				<div className = "spacing">
+				
                 <table className="table table-striped table-bordered" 
 				  style={{ marginTop: 20 }} >
 				  
@@ -519,7 +521,6 @@ class TodosList extends Component {
                         { this.listOfExpenses() }
                     </tbody>
                 </table>
-				</div>
             </div>
         )
     }
