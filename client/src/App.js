@@ -20,6 +20,7 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import Footer from "./components/footer";
 
 import "./App.css";
 
@@ -54,8 +55,9 @@ class App extends Component {
       <Provider store={store}>
      
 		<Router>
-          <div className="App">
-			
+          
+			<div>
+				
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
@@ -68,7 +70,7 @@ class App extends Component {
 			  <PrivateRoute exact path="/monthly" component={Monthly} />
 			  <PrivateRoute exact path="/group" component={Group} />
             </Switch>
-      
+				<Footer/>
 		  </div>
 		  
         </Router>
