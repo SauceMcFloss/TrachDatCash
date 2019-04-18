@@ -488,7 +488,7 @@ class TodosList extends Component {
 					</div>
 				  </nav>
 				</div>
-				
+				<div className = "spacing">
                 <table className="table table-striped table-bordered" 
 				  style={{ marginTop: 20 }} >
 				  
@@ -519,6 +519,7 @@ class TodosList extends Component {
                         { this.listOfExpenses() }
                     </tbody>
                 </table>
+				</div>
             </div>
         )
     }

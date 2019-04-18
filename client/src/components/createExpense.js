@@ -223,7 +223,7 @@ class CreateExpense extends Component {
 				</button>
 				</nav>
 				<center><h3>Create New Expense</h3></center>
-				
+				<div className = "spacing">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>Description: </label>
@@ -293,6 +293,7 @@ class CreateExpense extends Component {
                         <center><input type="submit" value="Create Expense" className="btn btn-info" /></center>
                     </div>
                 </form>
+				</div>
             </div>
 		</div>
         )
