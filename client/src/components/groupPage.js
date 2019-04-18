@@ -123,7 +123,7 @@ class TodosList extends Component {
 
     render() {		
         return (
-            <div>
+            <div className = "App">
               
 			  
 			  <nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
