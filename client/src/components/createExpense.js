@@ -11,6 +11,8 @@ import { logoutUser } from "../actions/authActions";
 import jwt_decode from "jwt-decode";
 import logo from "../o-logo.png";
 
+const usersGroupCode = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
+
 
 const optionsCategory = [
   { value: 'Bills', label: 'Bills' },
@@ -74,7 +76,7 @@ const optionsDay = [
 ];
 
 const optionsCode = [
-  { value: 'abcd', label: 'abcd' }
+  { value: usersGroupCode, label: usersGroupCode }
 ];
 
 class CreateExpense extends Component {
