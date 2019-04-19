@@ -1,17 +1,16 @@
 .body{
-	width: 100px;
-	background-color: #94D6B7;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 .container{
-	width: 100%;
+	width: auto;
 	max-width: 990px;
-	
-	background-color: #94D6B7;
+	padding: 0 15px;
 }
 .container .footer-text{
-	margin: 20px 0;
+margin: 20px 0;
 
-	font-size: 15px;
+	  font-size: 20px;
 }
 .badge{
 	background-color : #94D6B7;
