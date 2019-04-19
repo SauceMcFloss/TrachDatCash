@@ -30,7 +30,7 @@ class TodosList extends Component {
 		this.onRowDoubleClick = this.onRowDoubleClick.bind(this);
 		
         this.state = {
-			todos: [],
+			expensesArray: [],
 			total: 0
 		};
     }
@@ -51,7 +51,7 @@ class TodosList extends Component {
 				temp = sortBy(temp, ['description', 'amount']);
 				sum = sumBy(temp, 'amount');
                 this.setState({ 
-					todos: temp,
+					expensesArray: temp,
 					total: sum
 				});
             })
@@ -61,11 +61,11 @@ class TodosList extends Component {
     }
 	
 	onChangeSort(sortItem) {
-		temp = this.state.todos;
+		temp = this.state.expensesArray;
 		temp = sortBy(temp, sortItem);
 		sum = sumBy(temp, 'amount');
 		this.setState({ 
-					todos: temp,
+					expensesArray: temp,
 					total: sum
 				});
     }
@@ -130,7 +130,7 @@ class TodosList extends Component {
 				
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
-					data={this.state.todos} 
+					data={this.state.expensesArray} 
 					striped hover 
 					version='4' 
 					cellEdit={ cellEdit } 
