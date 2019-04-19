@@ -60,17 +60,19 @@ class Register extends Component {
 		<center><div className = "body">
 			<center><h1><img src = {logo2} width = "400" height = "80" class = "rounded" alt = ""/></h1></center>
           
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            
               <h4>
                 <b>Register</b> below
               </h4>
               <p className="grey-text text-darken-1">
                 Already have an account? <Link to="/login">Log in</Link>
               </p>
-            </div>
+         
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input
+              <div className="form-group">
+                
+				<label htmlFor="name">Name:  </label>
+				<input
                   onChange={this.onChange}
                   value={this.state.name}
                   error={errors.name}
@@ -80,11 +82,12 @@ class Register extends Component {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
+                
                 <span className="red-text">{errors.name}</span>
               </div>
-              <div className="input-field col s12">
-                <input
+              <div className="form-group">
+                 <label htmlFor="email">Email: </label>
+				<input
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
@@ -94,11 +97,12 @@ class Register extends Component {
                     invalid: errors.email
                   })}
                 />
-                <label htmlFor="email">Email</label>
+               
                 <span className="red-text">{errors.email}</span>
               </div>
-              <div className="input-field col s12">
-                <input
+              <div className="form-group">
+                <label htmlFor="password">Password:</label>
+				<input
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
@@ -108,11 +112,12 @@ class Register extends Component {
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                
                 <span className="red-text">{errors.password}</span>
               </div>
-              <div className="input-field col s12">
-                <input
+              <div className="form-group">
+                <label htmlFor="password2">Confirm Password</label>
+				<input
                   onChange={this.onChange}
                   value={this.state.password2}
                   error={errors.password2}
@@ -125,7 +130,7 @@ class Register extends Component {
                 <label htmlFor="password2">Confirm Password</label>
                 <span className="red-text">{errors.password2}</span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              
                 <button
                   style={{
                     width: "150px",
@@ -138,7 +143,7 @@ class Register extends Component {
                 >
                   Sign up
                 </button>
-              </div>
+              
             </form>
           </div>
 		  </center>
