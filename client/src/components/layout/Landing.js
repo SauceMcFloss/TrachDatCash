@@ -7,7 +7,7 @@ import '../../App.css';
 
 import logo2 from "../../o-logo.png";
 import logo from "../../money_sign.png";
-import picture from "../../fin_plan.jpg";
+import picture from "../../calc.jpg";
 import description from "../../pic.PNG";
 
 class Landing extends Component {
@@ -15,7 +15,7 @@ class Landing extends Component {
     return (
       	
 		<div className= "AppL">
-			<meta charset="utf-8"/>
+			
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -57,8 +57,8 @@ class Landing extends Component {
                   type="submit"
                   className="btn btn-info"
                 ><Link to="register" className="nav-link">Register</Link></button></center>
-						
-						<center><img src = {logo} width = "50" height = "30" class="img-circle"  alt = ""/></center>
+						<div className = "spacingpic"></div>
+						<center><img src = {logo} width = "50" height = "50" class="img-circle"  alt = ""/></center>
 					</div>
 				</div>
 		</div>
