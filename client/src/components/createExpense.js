@@ -290,7 +290,7 @@ class CreateExpense extends Component {
                         <label>Group Code: </label>
                         <Select
 							name="Group Code"
-							placeholder={codeOfUser}
+							placeholder={this.state.month}
 							value={selectedCode}
 							options={optionsCode}
 							onChange={this.onChangeGroupCode}
