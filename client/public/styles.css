@@ -1,10 +1,7 @@
-.body{
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
+
 .container{
 	
-	max-width: 990px;
+	max-width: 900px;
 	
 	background-color: #94D6B7;
 }
