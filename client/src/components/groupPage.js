@@ -123,7 +123,7 @@ class TodosList extends Component {
 
     render() {		
         return (
-            <div>
+            <div className = "App">
               
 			  
 			  <nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
@@ -168,7 +168,8 @@ class TodosList extends Component {
 				
 				<h3><center>Group Expenses</center></h3>
 			  <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
-                <table className="table table-striped table-bordered" 
+                <div className = "spacing">
+				<table className="table table-striped table-bordered" 
 				  style={{ marginTop: 20 }} >
 				  
                     <thead className="thead-dark">
@@ -198,6 +199,7 @@ class TodosList extends Component {
                         { this.listOfExpenses() }
                     </tbody>
                 </table>
+				</div>
             </div>
         )
     }

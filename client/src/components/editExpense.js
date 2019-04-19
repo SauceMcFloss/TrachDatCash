@@ -233,6 +233,7 @@ class EditExpense extends Component {
 				</button>
 				</nav>
                 <h3 align="center">Update Expense</h3>
+				<div className = "spacing">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>Description: </label>
@@ -305,6 +306,7 @@ class EditExpense extends Component {
 					   <button type="submit" class="btn btn-danger" onClick={() => {this.deleteExpense()}}>Delete</button>
                     </div>
                 </form>
+				</div>
             </div>
         )
     }
