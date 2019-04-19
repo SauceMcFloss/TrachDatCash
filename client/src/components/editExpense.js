@@ -73,11 +73,6 @@ const optionsDay = [
   { value: 31, label: 31 }
 ];
 
-const optionsCode = [
-  { value: '', label: 'No group code' },
-  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString(), label: 'User group code' }
-];
-
 class EditExpense extends Component {
 
     constructor(props) {
@@ -200,9 +195,6 @@ class EditExpense extends Component {
 		const { selectedCategory } = this.state;
 		const { selectedMonth } = this.state;
 		const { selectedDay } = this.state;
-		const { selectedCode } = this.state;
-		
-		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
 	
         return (
             <div className= "App">
@@ -300,13 +292,11 @@ class EditExpense extends Component {
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <Select
-							name="Group Code"
-							placeholder={this.state.month}
-							value={selectedCode}
-							options={optionsCode}
-							onChange={this.onChangeGroupCode}
-						/>
+                        <input  type="text"
+                                className="form-control"
+                                value={this.state.groupCode}
+                                onChange={this.onChangeGroupCode}
+                                />
                     </div>
 
                     <br />
