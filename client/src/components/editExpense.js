@@ -302,7 +302,7 @@ class EditExpense extends Component {
                         <label>Group Code: </label>
                         <Select
 							name="Group Code"
-							placeholder={this.state.month}
+							placeholder={this.state.groupCode}
 							value={selectedCode}
 							options={optionsCode}
 							onChange={this.onChangeGroupCode}
