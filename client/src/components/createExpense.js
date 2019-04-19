@@ -11,8 +11,6 @@ import { logoutUser } from "../actions/authActions";
 import jwt_decode from "jwt-decode";
 import logo from "../o-logo.png";
 
-const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString();
-
 const optionsCategory = [
   { value: 'Bills', label: 'Bills' },
   { value: 'Dining', label: 'Dining Out' },
@@ -75,8 +73,7 @@ const optionsDay = [
 ];
 
 const optionsCode = [
-  { value: '', label: 'No group code' },
-  { value: codeOfUser, label: codeOfUser }
+  { value: '', label: 'No group code' }
 ];
 
 class CreateExpense extends Component {
@@ -100,7 +97,7 @@ class CreateExpense extends Component {
             selectedMonth: '',
             selectedDay: '',
             year: '',
-			groupCode: ''
+			groupCode: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString()
         }
     }
 	
