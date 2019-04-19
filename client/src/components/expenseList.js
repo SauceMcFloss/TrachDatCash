@@ -12,7 +12,7 @@ import jwt_decode from "jwt-decode";
 
 import logo from "../o-logo.png";
 
-import  { Redirect } from 'react-router-dom'
+import  { Redirect } from 'react-router-dom';
 
 var ReactBsTable = require('react-bootstrap-table');
 var BootstrapTable = ReactBsTable.BootstrapTable;
