@@ -60,12 +60,12 @@ class App extends Component {
 			<Provider store={store}>
 				<Router>
 					<div className="App">
-						// Not logged in
+						{/* Not logged in */}
 						<Route exact path="/" component={Landing} />
 						<Route exact path="/register" component={Register} />
 						<Route exact path="/login" component={Login} />
 						
-						// Logged in
+						{/* Logged in */}
 						<Switch>
 							<PrivateRoute exact path="/dashboard" component={ExpensesList} />
 							<PrivateRoute exact path="/create" component={CreateExpense} />
