@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 
+
 // Load functions and user state
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
@@ -59,7 +60,7 @@ class App extends Component {
 		return(
 			<Provider store={store}>
 				<Router>
-					<div className="App">
+					<div>
 						{/* Not logged in */}
 						<Route exact path="/" component={Landing} />
 						<Route exact path="/register" component={Register} />
@@ -74,7 +75,7 @@ class App extends Component {
 							<PrivateRoute exact path="/monthly" component={Monthly} />
 							<PrivateRoute exact path="/group" component={Group} />
 						</Switch>
-						</Footer>
+					Footer/>
 					</div>
 				</Router>
 			</Provider>
