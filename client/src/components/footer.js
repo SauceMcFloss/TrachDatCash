@@ -9,7 +9,7 @@ class Footer extends React.Component{
 				<div className = "container sticky-bottom">
 					<p className = "footer-text"> Track Dat Ca$h,Group 13</p>
 				</div>
-			</div>
+			
 		</footer>
 		
 		);
