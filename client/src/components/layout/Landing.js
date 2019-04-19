@@ -41,7 +41,7 @@ class Landing extends Component {
 							<center><h1><img src = {picture} width = "400" height = "300" class = "rounded" alt = ""/></h1></center>
 						</div>
 				
-					<div className = "col s10">
+					<div className = "right">
 						<center><h2>Here in Track Dat Ca$h...</h2></center>
 						<center><p>You have the option to view your expenses in a personal or group setting</p></center>
 						<center><p>Plan your finances and keep a budget</p></center>
