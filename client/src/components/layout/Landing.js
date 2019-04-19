@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 
- 
+import Divider from '@material-ui/core/Divider'
 import '../../App.css';
 
 import logo2 from "../../o-logo.png";
@@ -43,6 +43,7 @@ class Landing extends Component {
 				
 					<div className = "right">
 						<center><h2>Here in Track Dat Ca$h...</h2></center>
+						<Divider/>
 						<center><p>You have the option to view your expenses in a personal or group setting</p></center>
 						<center><p>Plan your finances and keep a budget</p></center>
 						<center><p>Track your expenses monthly</p></center>
