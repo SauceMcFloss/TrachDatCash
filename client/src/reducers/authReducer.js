@@ -1,8 +1,8 @@
-// Dependencies
-const isEmpty = require("is-empty");
-
 // Load custom types
 import { SET_CURRENT_USER, USER_LOADING } from "../actions/types";
+
+// Dependencies
+const isEmpty = require("is-empty");
 
 // Define constants
 const initialState = {
