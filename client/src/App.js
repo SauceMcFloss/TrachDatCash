@@ -74,6 +74,7 @@ class App extends Component {
 							<PrivateRoute exact path="/monthly" component={Monthly} />
 							<PrivateRoute exact path="/group" component={Group} />
 						</Switch>
+						</Footer>
 					</div>
 				</Router>
 			</Provider>
