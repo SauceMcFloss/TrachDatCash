@@ -72,11 +72,6 @@ const optionsDay = [
   { value: 31, label: 31 }
 ];
 
-const optionsCode = [
-  { value: '', label: 'No group code' },
-  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString(), label: 'User group code' }
-];
-
 class CreateExpense extends Component {
 
     constructor(props) {
@@ -186,6 +181,11 @@ class CreateExpense extends Component {
 		const { selectedMonth } = this.state;
 		const { selectedDay } = this.state;
 		const { selectedCode } = this.state;
+		
+		const optionsCode = [
+		  { value: '', label: 'No group code' },
+		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString(), label: 'Your group code' }
+		];
 		
 		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
 		
