@@ -109,16 +109,10 @@ class TodosList extends Component {
 						  <Link to="/group" className="nav-link">Group</Link>
 						</li>
 				<li className = "navbar-item">
-					<right><button
-					style={{
-					width: "150px",
-					borderRadius: "3px",
-					letterSpacing: "1.5px",
-					marginTop: "1rem"
-					}}
+					<right><button style={{ width: "150px",borderRadius: "3px",letterSpacing: "1.5px",marginTop: "1rem"}}
 					onClick={this.onLogoutClick}
-					className="btn btn-info"
-					>Link to = "login" className = "nav-link">
+					className="btn btn-info">
+					<Link to = "login" className = "nav-link">
 					Logout</Link>
 				</button></right>
 				</li>
