@@ -27,7 +27,16 @@ class Landing extends Component {
 					<div className="collpase navbar-collapse">
 					  <ul className="navbar-nav ml-auto">
 						<li className="navbar-item">
-						 <right> <Link to="login" className="nav-link">Login</Link></right>
+						 <right><button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-info"
+                ><Link to="login" className="nav-link">Login</Link></button>
 						</li>
 						</ul>
 					</div>
