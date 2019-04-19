@@ -36,20 +36,21 @@ class Landing extends Component {
 					</div>
 					</nav>
 				</div>
-
-				<div className = "Picture">
-						<center><h1><img src = {picture} width = "1100" height = "300" class = "rounded" alt = ""/></h1></center>
+				<div className = "row">
+					<div className = "Picture">
+							<center><h1><img src = {picture} width = "1100" height = "300" class = "rounded" alt = ""/></h1></center>
+						</div>
+				
+					<div className = "footer">
+						<center><h2>Here in Track Dat Ca$h...</h2></center>
+						<center><p>You have the option to view your expenses in a personal or group setting</p></center>
+						<center><p>Plan your finances and keep a budget</p></center>
+						<center><p>Track your expenses monthly</p></center>
+						<center><p>Analyze your expenses</p></center>
+						
+						
+						<center><img src = {logo} width = "50" height = "30" class="img-circle"  alt = ""/></center>
 					</div>
-				 <br />
-				<div className = "footer">
-					<center><h2>Here in Track Dat Ca$h...</h2></center>
-					<center><p>You have the option to view your expenses in a personal or group setting</p></center>
-					<center><p>Plan your finances and keep a budget</p></center>
-					<center><p>Track your expenses monthly</p></center>
-					<center><p>Analyze your expenses</p></center>
-					
-					
-					<center><img src = {logo} width = "50" height = "30" class="img-circle"  alt = ""/></center>
 				</div>
 		</div>
 		
