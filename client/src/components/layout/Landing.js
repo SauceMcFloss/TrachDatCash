@@ -47,18 +47,7 @@ class Landing extends Component {
 						<center><p>Analyze your expenses</p></center>
 						<center><p> Want to get started? Register Now!</p><center>
 						<Link to="register" className="nav-link">Register</Link>
-						<button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-info"
-                >
-                  Sign up
-                </button>
+						
 						
 						<center><img src = {logo} width = "50" height = "30" class="img-circle"  alt = ""/></center>
 					</div>
