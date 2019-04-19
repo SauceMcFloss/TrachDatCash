@@ -27,9 +27,6 @@ class Landing extends Component {
 					<div className="collpase navbar-collapse">
 					  <ul className="navbar-nav ml-auto">
 						<li className="navbar-item">
-						  <right><Link to="register" className="nav-link">Register</Link></right>
-						</li>
-						<li className="navbar-item">
 						 <right> <Link to="login" className="nav-link">Login</Link></right>
 						</li>
 						</ul>
@@ -48,7 +45,20 @@ class Landing extends Component {
 						<center><p>Plan your finances and keep a budget</p></center>
 						<center><p>Track your expenses monthly</p></center>
 						<center><p>Analyze your expenses</p></center>
-						
+						<center><p> Want to get started? Register Now!</p><center>
+						<Link to="register" className="nav-link">Register</Link>
+						<center><button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-info"
+                >
+                  Sign up
+                </button></center>
 						
 						<center><img src = {logo} width = "50" height = "30" class="img-circle"  alt = ""/></center>
 					</div>
