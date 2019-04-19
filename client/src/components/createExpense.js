@@ -97,7 +97,7 @@ class CreateExpense extends Component {
             selectedMonth: '',
             selectedDay: '',
             year: '',
-			groupCode: ''
+			groupCode: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString()
         }
     }
 	
@@ -291,7 +291,7 @@ class CreateExpense extends Component {
 							name="Group Code"
 							placeholder={codeOfUser}
 							value={selectedCode}
-							options={ value: '', label: 'No group code' }, { value: codeOfUser.toString(), label: codeOfUser.toString() }
+							options={optionsCode}
 							onChange={this.onChangeGroupCode}
 						/>
                     </div>
