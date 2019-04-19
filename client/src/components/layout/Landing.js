@@ -46,8 +46,8 @@ class Landing extends Component {
 						<center><p>Track your expenses monthly</p></center>
 						<center><p>Analyze your expenses</p></center>
 						<center><p> Want to get started? Register Now!</p></center>
-						<Link to="register" className="nav-link">Register</Link>
-						<button
+						<center><Link to="register" className="nav-link">Register</Link></center>
+						<center><button
                   style={{
                     width: "150px",
                     borderRadius: "3px",
@@ -58,7 +58,7 @@ class Landing extends Component {
                   className="btn btn-info"
                 >
                   Sign up
-                </button>
+                </button></center>
 						
 						<center><img src = {logo} width = "50" height = "30" class="img-circle"  alt = ""/></center>
 					</div>
