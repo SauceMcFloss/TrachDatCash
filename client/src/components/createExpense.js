@@ -185,7 +185,7 @@ class CreateExpense extends Component {
 		
         return (
 			<div className = "App">	
-		   <div style={{marginTop: 10}}>
+		  
                 
 				
 				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
@@ -294,7 +294,7 @@ class CreateExpense extends Component {
                     </div>
                 </form>
 				</div>
-            </div>
+            
 		</div>
         )
     }
