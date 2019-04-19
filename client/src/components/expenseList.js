@@ -12,23 +12,14 @@ import jwt_decode from "jwt-decode";
 
 import logo from "../o-logo.png";
 
+import  { Redirect } from 'react-router-dom';
+
+var ReactBsTable = require('react-bootstrap-table');
+var BootstrapTable = ReactBsTable.BootstrapTable;
+var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
+
 var temp = [];
 var sum = 0;
-
-const Expense = props => (
-    <tr>
-        <td>{props.item.description}</td>
-        <td>{props.item.amount}</td>
-		<td>{props.item.category}</td>
-        <td>{props.item.month}</td>
-        <td>{props.item.day}</td>
-        <td>{props.item.year}</td>
-		<td>{props.item.groupCode}</td>
-        <td>
-            <Link to={"/edit/"+props.item._id}>Edit</Link>
-        </td>
-    </tr>
-)
 
 class TodosList extends Component {
 
@@ -36,9 +27,10 @@ class TodosList extends Component {
         super(props);
 		
 		this.onChangeSort = this.onChangeSort.bind(this);
+		this.onRowDoubleClick = this.onRowDoubleClick.bind(this);
 		
         this.state = {
-			todos: [],
+			expensesArray: [],
 			total: 0
 		};
     }
@@ -59,7 +51,7 @@ class TodosList extends Component {
 				temp = sortBy(temp, ['description', 'amount']);
 				sum = sumBy(temp, 'amount');
                 this.setState({ 
-					todos: temp,
+					expensesArray: temp,
 					total: sum
 				});
             })
@@ -69,26 +61,34 @@ class TodosList extends Component {
     }
 	
 	onChangeSort(sortItem) {
-		temp = this.state.todos;
+		temp = this.state.expensesArray;
 		temp = sortBy(temp, sortItem);
 		sum = sumBy(temp, 'amount');
 		this.setState({ 
-					todos: temp,
+					expensesArray: temp,
 					total: sum
 				});
     }
-
-    listOfExpenses() {
-        return this.state.todos.map(function(currentExpense, i){
-            return <Expense item={currentExpense} key={i} />;
-        })
-    }
+	
+	onRowDoubleClick(row){
+		this.props.history.push('/edit/'+row._id)
+	}
 
     render() {	
+		const options = {
+			onRowDoubleClick: this.onRowDoubleClick,
+			onSortChange: this.onChangeSort,
+			defaultSortName: 'description',
+			defaultSortOrder: 'asc'
+		  };
+		
+		const cellEdit = {
+			mode: 'dbclick' // double click cell to edit
+		  };
+		  
         return (
             <div className = "App">
                
-				
 				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top ">
 					<img src={logo} width="400" height="80" alt=""/>
 					<div className="collpase navbar-collapse">
@@ -127,39 +127,24 @@ class TodosList extends Component {
 				
                 <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
                 <div className = "spacing">
-				<table className="table table-striped table-bordered" 
-				  style={{ marginTop: 20 }} >
-				  
-                    <thead className="thead-dark">
-                        <tr>
-                            <th data-field="description" 
-								onClick={() => {this.onChangeSort('description')}
-								}>Description</th>
-                            <th data-field="amount" 
-								onClick={() => {this.onChangeSort('amount')}
-								}>Amount</th>
-							<th data-field="category" 
-								onClick={() => {this.onChangeSort('category')}
-								}>Category</th>
-                            <th data-field="month" 
-								onClick={() => {this.onChangeSort('month')}
-								}>Month</th>
-                            <th data-field="day" 
-								onClick={() => {this.onChangeSort('day')}
-								}>Day</th>
-                            <th data-field="year" 
-								onClick={() => {this.onChangeSort('year')}
-								}>Year</th>
-							<th data-field="groupCode" 
-								onClick={() => {this.onChangeSort('groupCode')}
-								}>Group</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.listOfExpenses() }
-                    </tbody>
-                </table>
+				
+				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+				<BootstrapTable 
+					data={this.state.expensesArray} 
+					striped hover 
+					version='4' 
+					cellEdit={ cellEdit } 
+					options={ options }
+					pagination search multiColumnSearch>
+					  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+					  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+					  <TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
+					  <TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
+					  <TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+					  <TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+					  <TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+				</BootstrapTable>
+				
 				</div>
             </div>
         )

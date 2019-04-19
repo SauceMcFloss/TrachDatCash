@@ -10,10 +10,15 @@ import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
 
 import jwt_decode from "jwt-decode";
+import  { Redirect } from 'react-router-dom';
 
 import ReactChartkick, { ColumnChart } from 'react-chartkick'
 import Chart from 'chart.js'
 ReactChartkick.addAdapter(Chart)
+
+var ReactBsTable = require('react-bootstrap-table');
+var BootstrapTable = ReactBsTable.BootstrapTable;
+var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 
 var temp = [];
 var sum = 0;
@@ -56,6 +61,7 @@ class TodosList extends Component {
 		this.updateCharts = this.updateCharts.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 		this.onSubmitBudget = this.onSubmitBudget.bind(this);
+		this.onRowDoubleClick = this.onRowDoubleClick.bind(this);
 		
         this.state = {
 			expensesArray: [],
@@ -388,13 +394,22 @@ class TodosList extends Component {
 		this.updateCharts();
     }
 
-    listOfExpenses() {
-        return this.state.expensesArray.map(function(currentExpense, i){
-            return <Expense item={currentExpense} key={i} />;
-        })
-    }
+    onRowDoubleClick(row){
+		this.props.history.push('/edit/'+row._id)
+	}
 
     render() {
+		const options = {
+			onRowDoubleClick: this.onRowDoubleClick,
+			onSortChange: this.onChangeSort,
+			defaultSortName: 'description',
+			defaultSortOrder: 'asc'
+		  };
+		
+		const cellEdit = {
+			mode: 'dbclick' // double click cell to edit
+		  };
+		  
         return (
             <div className = "AppM">
               <nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
@@ -431,11 +446,18 @@ class TodosList extends Component {
 					Logout
 				</button>
 				</nav>
-			<div className = "divider">	
-				<form onSubmit={this.onSubmit}>
-					<center><label>Current Year:<input type="text" placeholder={this.state.year} className="form-control" value={this.state.year} onChange={this.onChangeYear}/><input type="submit" value="Update" className="btn btn-info" /></label></center>
-				</form>
-			</div>
+				<div className = "divider">	
+					<form onSubmit={this.onSubmit}>
+						<center><label>Current Year:
+							<input type="text" 
+								placeholder={this.state.year} 
+								className="form-control" 
+								value={this.state.year} 
+								onChange={this.onChangeYear}/>
+							<input type="submit" value="Update" className="btn btn-info" />
+						</label></center>
+					</form>
+				</div>
 			  <h3><center>{"Expenses for " + this.state.year}</center></h3>
 			  
 			  <ColumnChart data={[
@@ -494,36 +516,23 @@ class TodosList extends Component {
 				</div>
 				
 				<div className = "spacing">
-                <table className="table table-striped table-bordered" 
-				  style={{ marginTop: 20 }} >
-				  
-                    <thead className="thead-dark">
-                        <tr>
-                            <th data-field="description" 
-								onClick={() => {this.onChangeSort('description')}
-								}>Description</th>
-                            <th data-field="amount" 
-								onClick={() => {this.onChangeSort('amount')}
-								}>Amount</th>
-							<th data-field="category" 
-								onClick={() => {this.onChangeSort('category')}
-								}>Category</th>
-                            <th data-field="day" 
-								onClick={() => {this.onChangeSort('day')}
-								}>Day</th>
-                            <th data-field="year" 
-								onClick={() => {this.onChangeSort('year')}
-								}>Year</th>
-							<th data-field="groupCode" 
-								onClick={() => {this.onChangeSort('groupCode')}
-								}>Group</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.listOfExpenses() }
-                    </tbody>
-                </table>
+				
+                <link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+				<BootstrapTable 
+					data={this.state.expensesArray} 
+					striped hover 
+					version='4' 
+					cellEdit={ cellEdit } 
+					options={ options }
+					pagination search multiColumnSearch>
+					  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+					  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+					  <TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
+					  <TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+					  <TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+					  <TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+				</BootstrapTable>
+				
 				</div>
             </div>
         )

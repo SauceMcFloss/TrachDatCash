@@ -11,6 +11,12 @@ import { logoutUser } from "../actions/authActions";
 
 import jwt_decode from "jwt-decode";
 
+import  { Redirect } from 'react-router-dom';
+
+var ReactBsTable = require('react-bootstrap-table');
+var BootstrapTable = ReactBsTable.BootstrapTable;
+var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
+
 var temp = [];
 var tempCode = '';
 var sum = 0;
@@ -37,6 +43,7 @@ class TodosList extends Component {
 		this.onChangeSort = this.onChangeSort.bind(this);
 		this.onChangeGroupCode = this.onChangeGroupCode.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
+		this.onRowDoubleClick = this.onRowDoubleClick.bind(this);
 		
         this.state = {
 			expensesArray: [],
@@ -114,14 +121,22 @@ class TodosList extends Component {
             })	
     }
 	
-
-    listOfExpenses() {
-        return this.state.expensesArray.map(function(currentExpense, i){
-            return <Expense item={currentExpense} key={i} />;
-        })
-    }
+    onRowDoubleClick(row){
+		this.props.history.push('/edit/'+row._id)
+	}
 
     render() {		
+		const options = {
+			onRowDoubleClick: this.onRowDoubleClick,
+			onSortChange: this.onChangeSort,
+			defaultSortName: 'description',
+			defaultSortOrder: 'asc'
+		  };
+		
+		const cellEdit = {
+			mode: 'dbclick' // double click cell to edit
+		  };
+		  
         return (
             <div className = "App">
               
@@ -160,45 +175,33 @@ class TodosList extends Component {
 					Logout
 				</button>
 				</nav>
+				
 			<div className = "divider">	
 			  <form onSubmit={this.onSubmit}>
 				<center><label>Current Group Code:<input  type="text" placeholder={this.state.userCode} className="form-control" value={this.state.cat} onChange={this.onChangeGroupCode}/></label><input type="submit" value="Update" className="btn btn-info" /></center>
 			  </form><center><div>{"Your account's group code is: " + this.state.userCode}</div></center>
 			</div>
 				
-				<h3><center>Group Expenses</center></h3>
+			  <h3><center>Group Expenses</center></h3>
 			  <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
                 <div className = "spacing">
-				<table className="table table-striped table-bordered" 
-				  style={{ marginTop: 20 }} >
-				  
-                    <thead className="thead-dark">
-                        <tr>
-                            <th data-field="description" 
-								onClick={() => {this.onChangeSort('description')}
-								}>Description</th>
-                            <th data-field="amount" 
-								onClick={() => {this.onChangeSort('amount')}
-								}>Amount</th>
-							<th data-field="category" 
-								onClick={() => {this.onChangeSort('category')}
-								}>Category</th>
-                            <th data-field="month" 
-								onClick={() => {this.onChangeSort('month')}
-								}>Month</th>
-                            <th data-field="day" 
-								onClick={() => {this.onChangeSort('day')}
-								}>Day</th>
-                            <th data-field="year" 
-								onClick={() => {this.onChangeSort('year')}
-								}>Year</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.listOfExpenses() }
-                    </tbody>
-                </table>
+				
+				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+				<BootstrapTable 
+					data={this.state.expensesArray} 
+					striped hover 
+					version='4' 
+					cellEdit={ cellEdit } 
+					options={ options }
+					pagination search multiColumnSearch>
+					  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+					  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+					  <TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
+					  <TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
+					  <TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+					  <TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+				</BootstrapTable>
+				
 				</div>
             </div>
         )
