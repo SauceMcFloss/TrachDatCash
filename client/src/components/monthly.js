@@ -446,11 +446,18 @@ class TodosList extends Component {
 					Logout
 				</button>
 				</nav>
-			<div className = "divider">	
-				<form onSubmit={this.onSubmit}>
-					<center><label>Current Year:<input type="text" placeholder={this.state.year} className="form-control" value={this.state.year} onChange={this.onChangeYear}/><input type="submit" value="Update" className="btn btn-info" /></label></center>
-				</form>
-			</div>
+				<div className = "divider">	
+					<form onSubmit={this.onSubmit}>
+						<center><label>Current Year:
+							<input type="text" 
+								placeholder={this.state.year} 
+								className="form-control" 
+								value={this.state.year} 
+								onChange={this.onChangeYear}/>
+							<input type="submit" value="Update" className="btn btn-info" />
+						</label></center>
+					</form>
+				</div>
 			  <h3><center>{"Expenses for " + this.state.year}</center></h3>
 			  
 			  <ColumnChart data={[

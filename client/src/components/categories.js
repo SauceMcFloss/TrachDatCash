@@ -291,8 +291,9 @@ class TodosList extends Component {
 		e.preventDefault();
 		
 		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
-		axios.post('/expenses/category/Bills', {
+		axios.post('/expenses/category', {
 			id: idOfUser,
+			newCategory: this.state.category,
 			newYear: this.state.year
 			})
             .then(response => {
@@ -365,7 +366,15 @@ class TodosList extends Component {
 				</nav>
 			  <div className = "divider">
 			  <form onSubmit={this.onSubmit}>
-				<center><label>Current Year:<input type="text" placeholder={this.state.year} className="form-control" value={this.state.year} onChange={this.onChangeYear} /><input type="submit" value="Update" className="btn btn-info" /></label></center>
+				<center><label>Current Year:
+					<input type="text" 
+						placeholder={this.state.year} 
+						className="form-control" 
+						value={this.state.year} 
+						onChange={this.onChangeYear} 
+					/>
+					<input type="submit" value="Update" className="btn btn-info" />
+				</label></center>
 			</form>
 			</div>
 			  
