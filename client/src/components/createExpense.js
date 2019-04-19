@@ -152,7 +152,6 @@ class CreateExpense extends Component {
         e.preventDefault();
 		
 		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
-		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
      
         const newExpense = {
 			userId: idOfUser,
@@ -186,6 +185,8 @@ class CreateExpense extends Component {
 		const { selectedMonth } = this.state;
 		const { selectedDay } = this.state;
 		const { selectedCode } = this.state;
+		
+		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
 		
         return (
 			<div className = "App">	
