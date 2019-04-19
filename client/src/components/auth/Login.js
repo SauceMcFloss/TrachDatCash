@@ -59,7 +59,7 @@ class Login extends Component {
         <center><div className = "body">
 			<center><h1><img src = {logo2} width = "400" height = "80" class = "rounded" alt = ""/></h1></center>
 		
-            <div className="col s12" style={{ paddingLeft: "11.30px" }}>
+            <div className="form-group">
               <h4>
                 <b>Login</b> below
               </h4>
@@ -68,7 +68,7 @@ class Login extends Component {
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+              <div className="input-field">
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -85,7 +85,7 @@ class Login extends Component {
                   {errors.emailnotfound}
                 </span>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field">
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
@@ -102,7 +102,7 @@ class Login extends Component {
                   {errors.passwordincorrect}
                 </span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.30px" }}>
+              <div className="form-group" >
                 <button
                   style={{
                     width: "150px",
