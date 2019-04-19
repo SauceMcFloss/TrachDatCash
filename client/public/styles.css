@@ -3,11 +3,13 @@
 	
 	max-width: 900px;
 	position:absolute;
+	padding-left: 0px;
+	padding-right: 0px;
 	left:0;
 	bottom:0;
 	right:0;
 	background-color: #94D6B7;
-	padding-bottom:60px;
+	padding-bottom:30px;
 }
 .container .footer-text{
 	margin: 20px 0;
