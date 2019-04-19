@@ -287,13 +287,12 @@ class CreateExpense extends Component {
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <Select
-							name="Group Code"
-							placeholder={codeOfUser}
-							value={selectedCode}
-							options={ value: '', label: 'No group code' }, { value: codeOfUser.toString(), label: codeOfUser.toString() }
-							onChange={this.onChangeGroupCode}
-						/>
+                        <select value={this.state.value} onChange={this.onChangeGroupCode}>
+							<option value="grapefruit">Grapefruit</option>
+							<option value="lime">Lime</option>
+							<option value="coconut">Coconut</option>
+							<option value="mango">Mango</option>
+						</select>
                     </div>
 
                     <div className="form-group">
