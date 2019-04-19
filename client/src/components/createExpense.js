@@ -184,7 +184,7 @@ class CreateExpense extends Component {
 		
 		const optionsCode = [
 		  { value: '', label: 'No group code' },
-		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString(), label: 'Your group code' }
+		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode, label: 'Your group code' }
 		];
 		
 		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
@@ -290,7 +290,7 @@ class CreateExpense extends Component {
                         <label>Group Code: </label>
                         <Select
 							name="Group Code"
-							placeholder={this.state.month}
+							placeholder={this.state.groupCode}
 							value={selectedCode}
 							options={optionsCode}
 							onChange={this.onChangeGroupCode}

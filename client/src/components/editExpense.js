@@ -199,7 +199,7 @@ class EditExpense extends Component {
 		
 		const optionsCode = [
 		  { value: '', label: 'No group code' },
-		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString(), label: 'User group code' }
+		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode, label: 'User group code' }
 		];
 		
 		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
