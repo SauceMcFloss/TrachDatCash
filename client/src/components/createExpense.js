@@ -74,7 +74,7 @@ const optionsDay = [
 ];
 
 const optionsCode = [
-  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString(), label: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString() }
+  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode, label: jwt_decode(localStorage.getItem("jwtToken")).groupCode }
 ];
 
 class CreateExpense extends Component {
