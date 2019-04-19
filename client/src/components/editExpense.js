@@ -165,9 +165,9 @@ class EditExpense extends Component {
         });
     }
 	
-	onChangeGroupCode(e) {
+	onChangeGroupCode(selectedCode) {
         this.setState({
-            groupCode: e.target.value
+            groupCode: selectedCode.value
         });
     }
 
