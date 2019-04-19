@@ -56,10 +56,7 @@ class Landing extends Component {
                   }}
                   type="submit"
                   className="btn btn-info"
-                ><Link to="register" className="nav-link">Register</Link>
-				>
-                  Sign up
-                </button></center>
+                ><Link to="register" className="nav-link">Register</Link></button></center>
 						
 						<center><img src = {logo} width = "50" height = "30" class="img-circle"  alt = ""/></center>
 					</div>
