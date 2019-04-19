@@ -20,7 +20,7 @@ class Landing extends Component {
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
-				<div className="container">
+				
 					
 					<nav className = "navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
 					<h1><img src = {logo2} width = "400" height = "80"  alt = ""/></h1>
@@ -32,7 +32,7 @@ class Landing extends Component {
 						</ul>
 					</div>
 					</nav>
-				</div>
+				
 				<div className = "row">
 					<div className = "Picture">
 							<center><h1><img src = {picture} width = "400" height = "300" class = "rounded" alt = ""/></h1></center>

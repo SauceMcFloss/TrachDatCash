@@ -8,6 +8,11 @@
 	background-color:#E3E4E2;
 	height: 1100px;
 }
+.AppL{
+	background-color:#E3E4E2;
+  height: auto;
+  
+}
 .body
 {
 	 display:inline-block;
@@ -72,11 +77,7 @@
   font-size: calc(10px + 2vmin);
   color: #E5DBBE;
 }
-.AppL{
-	background-color:#E3E4E2;
-  height: auto;
-  
-}
+
 
 .App-link {
   color: #61dafb;
