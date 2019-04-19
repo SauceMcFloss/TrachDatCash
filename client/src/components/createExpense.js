@@ -73,7 +73,8 @@ const optionsDay = [
 ];
 
 const optionsCode = [
-  { value: '', label: 'No group code' }
+  { value: '', label: 'No group code' },
+  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString(), label: 'User group code' }
 ];
 
 class CreateExpense extends Component {
@@ -97,7 +98,7 @@ class CreateExpense extends Component {
             selectedMonth: '',
             selectedDay: '',
             year: '',
-			groupCode: jwt_decode(localStorage.getItem("jwtToken")).groupCode.toString()
+			groupCode: ''
         }
     }
 	
