@@ -274,8 +274,7 @@ expenseRoutes.post("/login", (req, res) => {
 				// Create JWT Payload
 				const payload = {
 					id: user.id,
-					name: user.name,
-					groupCode: user.groupCode
+					name: user.name
 				};
 
 				// Sign token

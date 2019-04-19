@@ -73,9 +73,6 @@ const optionsDay = [
   { value: 31, label: 31 }
 ];
 
-const optionsCode = [
-  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode, label: jwt_decode(localStorage.getItem("jwtToken")).groupCode }
-];
 
 class CreateExpense extends Component {
 
@@ -143,9 +140,9 @@ class CreateExpense extends Component {
         });
     }
 	
-	onChangeGroupCode(selectedCode) {
+	onChangeGroupCode(e) {
         this.setState({
-            groupCode: selectedCode.value
+            groupCode: e.target.value
         });
     }
 
@@ -185,7 +182,6 @@ class CreateExpense extends Component {
 		const { selectedCategory } = this.state;
 		const { selectedMonth } = this.state;
 		const { selectedDay } = this.state;
-		const { selectedCode } = this.state;
 		
         return (
 			<div className = "App">	
@@ -286,13 +282,11 @@ class CreateExpense extends Component {
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <Select
-							name="Group Code"
-							placeholder={this.state.groupCode}
-							value={selectedCode}
-							options={optionsCode}
-							onChange={this.onChangeGroupCode}
-						/>
+                        <input  type="text"
+                                className="form-control"
+                                value={this.state.groupCode}
+                                onChange={this.onChangeGroupCode}
+                                />
                     </div>
 
                     <div className="form-group">
