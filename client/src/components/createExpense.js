@@ -73,7 +73,7 @@ const optionsDay = [
 ];
 
 const optionsCode = [
-  { value: '', label: 'No group code' }
+  { value: 'abcd', label: 'No group code' }
 ];
 
 class CreateExpense extends Component {
