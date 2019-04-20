@@ -92,8 +92,8 @@ class CreateExpense extends Component {
             description: '',
             amount: '',
             category: '',
-            month: '',
-            day: '',
+            month: optionsMonth[today.getMonth()].value,
+            day: optionsDay[today.getDate() - 1].value,
             year: today.getFullYear(),
 			groupCode: ''
         }
