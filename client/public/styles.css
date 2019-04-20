@@ -19,6 +19,9 @@
 	margin:0;
 	padding: 0;
 	background-color: #94D6B7;
+	display: flex;
+	flex-direction: column;
+	 flex: 1 0 auto;
 	
 }
 .container .footer-text{
