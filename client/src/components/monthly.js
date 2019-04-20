@@ -451,7 +451,9 @@ class TodosList extends Component {
 								className="form-control" 
 								value={this.state.year} 
 								onChange={this.onChangeYear}/>
-							<input type="submit" value="Update" className="btn btn-info" />
+							<div className = "pull-right" style = "margin-left: 5px">	
+								<input type="submit" value="Update" className="btn btn-info" />
+							</div>
 						</label></center>
 					</form>
 				</div>
