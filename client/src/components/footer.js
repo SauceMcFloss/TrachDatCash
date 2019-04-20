@@ -8,7 +8,7 @@ class Footer extends React.Component{
 		<footer className = "footer text-center" >
 			
 				<div className = "container sticky-bottom">
-					<p className = "footer-text"> Track Dat Ca$h,Group 13</p>
+					<p className = "footer-text"> Track Dat Ca$h, Group 13</p>
 				</div>
 			
 		</footer>
