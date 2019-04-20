@@ -225,6 +225,7 @@ expenseRoutes.post("/register", (req, res) => {
 				name: req.body.name,
 				email: req.body.email,
 				groupCode: shortid.generate(),
+				budget: "100",
 				password: req.body.password
 			});
 
@@ -274,7 +275,9 @@ expenseRoutes.post("/login", (req, res) => {
 				// Create JWT Payload
 				const payload = {
 					id: user.id,
-					name: user.name
+					name: user.name,
+					groupCode: user.groupCode,
+					budget: user.budget
 				};
 
 				// Sign token

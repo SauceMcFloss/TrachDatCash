@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import CreatableSelect from 'react-select/lib/Creatable';
 
 import { Link } from 'react-router-dom';
 
@@ -160,9 +161,9 @@ class EditExpense extends Component {
         });
     }
 	
-	onChangeGroupCode(e) {
+	onChangeGroupCode(selectedCode) {
         this.setState({
-            groupCode: e.target.value
+            groupCode: selectedCode.value
         });
     }
 
@@ -195,40 +196,49 @@ class EditExpense extends Component {
 		const { selectedCategory } = this.state;
 		const { selectedMonth } = this.state;
 		const { selectedDay } = this.state;
+		const { selectedCode } = this.state;
+		
+		const optionsCode = [
+		  { value: '', label: 'No group code' },
+		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode, label: 'User group code' }
+		];
+		
+		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
 	
         return (
             <div className= "App">
 				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
 					<img src={logo} width="400" height="80" alt=""/>
 					<div className="collpase navbar-collapse">
-					  <ul className="navbar-nav mr-auto">
-						<li className="navbar-item">
-						  <Link to="/dashboard" className="nav-link">All Expenses</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/create" className="nav-link">Create Expense</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/categories" className="nav-link">Categories</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/monthly" className="nav-link">Monthly</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/group" className="nav-link">Group</Link>
-						</li>
-					  </ul>
-				<ul className = "navbar-nav ml-auto">
+						<ul className="navbar-nav mr-auto">
+							<li className="navbar-item">
+								<Link to="/dashboard" className="nav-link">All Expenses</Link>
+							</li>
+							<li className="navbar-item">
+								<Link to="/create" className="nav-link">Create Expense</Link>
+							</li>
+							<li className="navbar-item">
+								<Link to="/categories" className="nav-link">Categories</Link>
+							</li>
+							<li className="navbar-item">
+								<Link to="/monthly" className="nav-link">Monthly</Link>
+							</li>
+							<li className="navbar-item">
+								<Link to="/group" className="nav-link">Group</Link>
+							</li>
+						</ul>
+						<ul className = "navbar-nav ml-auto">
 							<li className = "navbar-item">
 								<button style={{ width: "150px",borderRadius: "2px",letterSpacing: "1.5px",marginTop: "1rem"}}
-					onClick={this.onLogoutClick}
-					className="btn btn-info">
-					<Link to = "login" className = "nav-link">
-					Logout</Link></button>
-				</li>
-				</ul>
-				</div>
+								onClick={this.onLogoutClick}
+								className="btn btn-info">
+								<Link to = "login" className = "nav-link">
+								Logout</Link></button>
+							</li>
+						</ul>
+					</div>
 				</nav>
+				
                 <h3 align="center">Update Expense</h3>
 				<div className = "spacing">
                 <form onSubmit={this.onSubmit}>
@@ -289,11 +299,13 @@ class EditExpense extends Component {
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <input  type="text"
-                                className="form-control"
-                                value={this.state.groupCode}
-                                onChange={this.onChangeGroupCode}
-                                />
+                        <CreatableSelect
+							name="Group Code"
+							placeholder={this.state.groupCode}
+							value={selectedCode}
+							options={optionsCode}
+							onChange={this.onChangeGroupCode}
+						/>
                     </div>
 
                     <br />
