@@ -417,7 +417,8 @@ class TodosList extends Component {
 					version='4' 
 					cellEdit={ cellEdit } 
 					options={ options }
-					pagination search multiColumnSearch>
+					pagination 
+					multiColumnSearch>
 					  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
 					  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
 					  <TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
