@@ -12,7 +12,7 @@
 }
 .AppL{
 	background-color:#E3E4E2;
-  height: 600px;
+  height: auto;
   width: auto;
   
   
@@ -93,6 +93,7 @@
     
 .btn-custom{
 	background-color: #94D6B7;
+	font-family: 'Script';
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
