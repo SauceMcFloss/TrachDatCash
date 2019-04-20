@@ -14,6 +14,9 @@ import logo from "../o-logo.png";
 
 import  { Redirect } from 'react-router-dom';
 
+// Load config keys
+const secretOrKey = "this-is-a-really-long-secret-key-yeehaw";
+
 var ReactBsTable = require('react-bootstrap-table');
 var BootstrapTable = ReactBsTable.BootstrapTable;
 var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
@@ -41,6 +44,11 @@ class TodosList extends Component {
 	};
 
     componentDidMount() {
+		// Remove token from local storage
+		localStorage.removeItem('pageToken');
+		// Set token to localStorage
+		localStorage.setItem('pageToken', '/dashboard');
+		
 		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
 		
         axios.post('/expenses/getAllExpenses', {
@@ -70,7 +78,7 @@ class TodosList extends Component {
 				});
     }
 	
-	onRowDoubleClick(row){
+	onRowDoubleClick(row){		
 		this.props.history.push('/edit/'+row._id)
 	}
 

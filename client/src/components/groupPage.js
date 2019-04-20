@@ -59,6 +59,11 @@ class TodosList extends Component {
 	};
 	
 	componentDidMount() {
+		// Remove token from local storage
+		localStorage.removeItem('pageToken');
+		// Set token to localStorage
+		localStorage.setItem('pageToken', '/group');
+		
 		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
         axios.post('/expenses/codeMount', {
 			id: idOfUser
