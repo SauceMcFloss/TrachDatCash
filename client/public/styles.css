@@ -16,6 +16,7 @@
 	margin:0;
 	padding: 0;
 	background-color: #94D6B7;
+	display: flex;
 }
 .container .footer-text{
 	margin: 20px 0;
