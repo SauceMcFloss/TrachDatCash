@@ -265,7 +265,6 @@ class CreateExpense extends Component {
 					<div className="form-group">
 					  <label>Month: </label>
 					  <Select
-						defaultValue={optionsMonth[today.getMonth()]}
 						name="Month"
 						placeholder={this.state.month}
 						value={selectedMonth}
@@ -276,7 +275,6 @@ class CreateExpense extends Component {
 					<div className="form-group">
 					  <label>Day: </label>
 					  <Select
-						defaultValue={optionsDay[today.getDate() - 1]}
 						name="Day"
 						placeholder={this.state.day}
 						value={selectedDay}
@@ -287,7 +285,6 @@ class CreateExpense extends Component {
 					<div className="form-group"> 
                         <label>Year: </label>
                         <input  
-							defaultValue={today.getFullYear()}
 							type="text"
 							className="form-control"
 							placeholder={'Enter year...'}
