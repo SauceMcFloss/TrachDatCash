@@ -89,10 +89,10 @@ class TodosList extends Component {
         return (
             <div className = "App">
                
-				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top ">
-					<img src={logo} width="400" height="80" alt=""/>
-					<div className="collpase navbar-collapse">
-					  <ul className="navbar-nav mr-auto">
+				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
+				<img src={logo} width="400" height="80" alt=""/>
+				<div className="collpase navbar-collapse">
+					<ul className="navbar-nav mr-auto">
 						<li className="navbar-item">
 						  <Link to="/dashboard" className="nav-link">All Expenses</Link>
 						</li>
@@ -108,18 +108,19 @@ class TodosList extends Component {
 						<li className="navbar-item">
 						  <Link to="/group" className="nav-link">Group</Link>
 						</li>
-						</ul>
-						<ul className = "navbar-nav ml-auto">
-							<li className = "navbar-item">
-								<button style={{ width: "150px",borderRadius: "2px",letterSpacing: "1.5px",marginTop: "1rem"}}
-					onClick={this.onLogoutClick}
-					className="btn btn-info">
-					<Link to = "login" className = "nav-link">
-					Logout</Link></button>
-				</li>
-				</ul>
+					</ul>
+					<ul className = "navbar-nav ml-auto">
+						<li className = "navbar-item">
+							<button style={{ width: "150px",borderRadius: "2px",letterSpacing: "1.5px",marginTop: "1rem"}}
+							onClick={this.onLogoutClick}
+							className="btn btn-info">
+							<Link to = "login" className = "nav-link">
+							Logout</Link></button>
+						</li>
+					</ul>
 				</div>
-				</nav>
+			</nav>
+			
 				 <h3><center>All Expenses</center></h3>
 				
                 <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
@@ -127,12 +128,15 @@ class TodosList extends Component {
 				
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
-					data={this.state.expensesArray} 
+					data={this.state.expensesArray}
+					headerStyle={ { background: '#3cb3bb' } }
 					striped hover 
 					version='4' 
 					cellEdit={ cellEdit } 
 					options={ options }
-					pagination search multiColumnSearch>
+					pagination 
+					search 
+					multiColumnSearch>
 					  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
 					  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
 					  <TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
