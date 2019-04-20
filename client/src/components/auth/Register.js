@@ -127,7 +127,7 @@ class Register extends Component {
                     invalid: errors.password2
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
+                
                 <span className="red-text">{errors.password2}</span>
               </div>
               

@@ -69,7 +69,7 @@ class Login extends Component {
             </div>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="form-group">
-				 <label htmlFor="email">Email: </label>
+				 <label htmlFor="email">    Email: </label>
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
