@@ -369,73 +369,74 @@ class TodosList extends Component {
 				</nav>
 			
 				<div className = "spacing">
-					<div className = "divider">
-						<form onSubmit={this.onSubmit}>
-							<center><label>Current Year:
-								<input type="text" 
-									placeholder={this.state.year} 
-									className="form-control" 
-									value={this.state.year} 
-									onChange={this.onChangeYear}/>
-								</label>
-								<input type="submit" value="Update" className="btn btn-info" />
-							</center>
-						</form>
-					</div>
-			  
-				<h3><center>{"Expenses Breakdown for " + this.state.year}</center></h3>
-				<PieChart 
-					data={[
-						["Bills", this.state.bills], 
-						["Dining Out", this.state.dining], 
-						["Education", this.state.education], 
-						["Entertainment", this.state.entertainment], 
-						["Groceries", this.state.groceries], 
-						["Health", this.state.health], 
-						["Shopping", this.state.shopping], 
-						["Transportation", this.state.transportation], 
-						["Other", this.state.other]
-					]} 
-					colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
-				/>
-	
-				<div className="container">
-					<nav className="navbar navbar-expand-sm navbar-light bg-light">
-						<div className="collpase navbar-collapse">
-							<ul className="navbar-nav mr-auto">
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Bills')}}>Bills</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Dining')}}>Dining Out</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Education')}}>Education</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Entertainment')}}>Entertainment</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Groceries')}}>Groceries</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Health')}}>Health</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Shopping')}}>Shopping</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Transportation')}}>Transportation</button>
-								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Other')}}>Other</button>
-							</ul>
+					<h3><center>{"Expenses Breakdown for " + this.state.year}</center></h3>
+					<div className = "flex_row">
+						<div className = "divider">
+							<form onSubmit={this.onSubmit}>
+								<center><label>Current Year:
+									<input type="text" 
+										placeholder={this.state.year} 
+										className="form-control" 
+										value={this.state.year} 
+										onChange={this.onChangeYear}/>
+									</label>
+									<input type="submit" value="Update" className="btn btn-info" />
+								</center>
+							</form>
 						</div>
-					</nav>
-				</div>
-				
-				<h5>{this.state.category + " " + this.state.year + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
-				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
-				<BootstrapTable 
-					data={this.state.expensesArray} 
-					headerStyle={ { background: '#3cb3bb' } }
-					striped hover 
-					version='4' 
-					cellEdit={ cellEdit } 
-					options={ options }
-					pagination 
-					multiColumnSearch>
-						<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
-						<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
-						<TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
-						<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
-						<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
-						<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
-				</BootstrapTable>
-				
+				  
+						<PieChart 
+							data={[
+								["Bills", this.state.bills], 
+								["Dining Out", this.state.dining], 
+								["Education", this.state.education], 
+								["Entertainment", this.state.entertainment], 
+								["Groceries", this.state.groceries], 
+								["Health", this.state.health], 
+								["Shopping", this.state.shopping], 
+								["Transportation", this.state.transportation], 
+								["Other", this.state.other]
+							]} 
+							colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
+						/>
+					</div>
+	
+					<div className="container">
+						<nav className="navbar navbar-expand-sm navbar-light bg-light">
+							<div className="collpase navbar-collapse">
+								<ul className="navbar-nav mr-auto">
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Bills')}}>Bills</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Dining')}}>Dining Out</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Education')}}>Education</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Entertainment')}}>Entertainment</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Groceries')}}>Groceries</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Health')}}>Health</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Shopping')}}>Shopping</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Transportation')}}>Transportation</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Other')}}>Other</button>
+								</ul>
+							</div>
+						</nav>
+					</div>
+					
+					<h5>{this.state.category + " " + this.state.year + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
+					<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+					<BootstrapTable 
+						data={this.state.expensesArray} 
+						headerStyle={ { background: '#3cb3bb' } }
+						striped hover 
+						version='4' 
+						cellEdit={ cellEdit } 
+						options={ options }
+						pagination 
+						multiColumnSearch>
+							<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+							<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+							<TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
+							<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+							<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+							<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+					</BootstrapTable>
 				</div>
             </div>
         )
