@@ -92,8 +92,8 @@ class CreateExpense extends Component {
             description: '',
             amount: '',
             category: '',
-            selectedMonth: optionsMonth[today.getMonth()].label + "?",
-            selectedDay: optionsDay[today.getDate() - 1].label + "?",
+            selectedMonth: optionsMonth[today.getMonth()].label,
+            selectedDay: optionsDay[today.getDate() - 1].label,
             year: today.getFullYear(),
 			groupCode: ''
         }
@@ -261,7 +261,7 @@ class CreateExpense extends Component {
 					  <label>Month: </label>
 					  <Select
 						name="Month"
-						placeholder={this.state.selectedMonth}
+						placeholder={optionsMonth[today.getMonth()].label + "?"}
 						value={selectedMonth}
 						options={optionsMonth}
 						onChange={this.onChangeMonth}
@@ -271,7 +271,7 @@ class CreateExpense extends Component {
 					  <label>Day: </label>
 					  <Select
 						name="Day"
-						placeholder={this.state.selectedDay}
+						placeholder={optionsDay[today.getDate() - 1].label + "?"}
 						value={selectedDay}
 						options={optionsDay}
 						onChange={this.onChangeDay}
