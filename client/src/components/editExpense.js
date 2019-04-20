@@ -182,16 +182,14 @@ class EditExpense extends Component {
         axios.post('/expenses/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
-		const pageURL = jwt_decode(localStorage.getItem("jwtTokenPage")).url;
-        this.props.history.push(pageURL);
+        this.props.history.push('/dashboard');
     }
 	
 	deleteExpense() {	
         axios.delete('/expenses/delete/'+this.props.match.params.id)
             .then(res => console.log(res.data));
         
-        const pageURL = jwt_decode(localStorage.getItem("jwtTokenPage")).url;
-        this.props.history.push(pageURL);
+        this.props.history.push('/dashboard');
     }
 
     render() {

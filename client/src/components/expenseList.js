@@ -10,9 +10,6 @@ import { logoutUser } from "../actions/authActions";
 
 import jwt_decode from "jwt-decode";
 
-// Load config keys
-const keys = require("../../../config/keys");
-
 import logo from "../o-logo.png";
 
 import  { Redirect } from 'react-router-dom';
@@ -74,9 +71,6 @@ class TodosList extends Component {
     }
 	
 	onRowDoubleClick(row){
-		const { token } = ';
-		localStorage.setItem("jwtToken", token);
-		
 		this.props.history.push('/edit/'+row._id)
 	}
 
@@ -91,23 +85,6 @@ class TodosList extends Component {
 		const cellEdit = {
 			mode: 'dbclick' // double click cell to edit
 		  };
-		  
-		// Remove token from local storage
-		localStorage.removeItem("jwtTokenPage");
-		// Create JWT Payload
-		const page = {
-			url: '/dashboard'
-		};
-		// Sign token
-		jwt.sign(
-			page,
-			keys.secretOrKey,
-			{
-				expiresIn: 31556926 // 1 year in seconds
-			}
-		)
-		// Set token to localStorage
-		localStorage.setItem("jwtTokenPage", page);
 		  
         return (
             <div className = "App">
