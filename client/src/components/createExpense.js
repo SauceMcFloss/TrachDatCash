@@ -235,10 +235,10 @@ class CreateExpense extends Component {
                     <div className="form-group"> 
                         <label>Description: </label>
                         <input  type="text"
-                                className="form-control"
-                                value={this.state.description}
-                                onChange={this.onChangeDescription}
-                                />
+							className="form-control"
+							value={this.state.description}
+							onChange={this.onChangeDescription}
+						/>
                     </div>
                     <div className="form-group">
                         <label>Amount: </label>
@@ -247,7 +247,7 @@ class CreateExpense extends Component {
 							className="form-control"
 							value={this.state.amount}
 							onChange={this.onChangeAmount}
-							/>
+						/>
                     </div>
 					<div className="form-group">
 					  <label>Category: </label>
@@ -282,16 +282,16 @@ class CreateExpense extends Component {
 					<div className="form-group"> 
                         <label>Year: </label>
                         <input  type="text"
-                                className="form-control"
-                                value={this.state.year}
-                                onChange={this.onChangeYear}
-                                />
+							className="form-control"
+							value={this.state.year}
+							onChange={this.onChangeYear}
+						/>
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
                         <Select
 							name="Group Code"
-							placeholder={'Enter group code'}
+							placeholder={'Select group code...'}
 							value={selectedCode}
 							options={optionsCode}
 							onChange={this.onChangeGroupCode}
