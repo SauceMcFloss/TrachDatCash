@@ -4,10 +4,11 @@
 	
 }
 .container{
-	width: 990px;
-
-	
-	padding: 0 15px;
+	width: 100%;
+	position: relative;
+	min-width:1100px;
+	margin:0;
+	padding: 0;
 	background-color: #94D6B7;
 }
 .container .footer-text{
