@@ -412,131 +412,123 @@ class TodosList extends Component {
 		  
         return (
             <div className = "AppM">
-              <nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
+				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
 					<img src={logo} width="400" height="80" alt=""/>
 					<div className="collpase navbar-collapse">
-					  <ul className="navbar-nav mr-auto">
-						<li className="navbar-item">
-						  <Link to="/dashboard" className="nav-link">All Expenses</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/create" className="nav-link">Create Expense</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/categories" className="nav-link">Categories</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/monthly" className="nav-link">Monthly</Link>
-						</li>
-						<li className="navbar-item">
-						  <Link to="/group" className="nav-link">Group</Link>
-						</li>
-					  </ul>
-					<ul className = "navbar-nav ml-auto">
+						<ul className="navbar-nav mr-auto">
+							<li className="navbar-item">
+							  <Link to="/dashboard" className="nav-link">All Expenses</Link>
+							</li>
+							<li className="navbar-item">
+							  <Link to="/create" className="nav-link">Create Expense</Link>
+							</li>
+							<li className="navbar-item">
+							  <Link to="/categories" className="nav-link">Categories</Link>
+							</li>
+							<li className="navbar-item">
+							  <Link to="/monthly" className="nav-link">Monthly</Link>
+							</li>
+							<li className="navbar-item">
+							  <Link to="/group" className="nav-link">Group</Link>
+							</li>
+						</ul>
+						<ul className = "navbar-nav ml-auto">
 							<li className = "navbar-item">
 								<button style={{ width: "150px",borderRadius: "2px",letterSpacing: "1.5px",marginTop: "1rem"}}
-					onClick={this.onLogoutClick}
-					className="btn btn-info">
-					<Link to = "login" className = "nav-link">
-					Logout</Link></button>
-				</li>
-				</ul>
-				</div>
-				</nav>
-				<div className = "flex">
-					<form onSubmit={this.onSubmit}>
-						
-						<center><label>Current Year:
-							<input type="text" 
-								placeholder={this.state.year} 
-								className="form-control" 
-								value={this.state.year} 
-								onChange={this.onChangeYear}/>
-							
-								<input type="submit" value="Update" className="btn btn-info" />
-							
-						</label></center>
-						
-					</form>
-				</div>
-			  <h3><center>{"Expenses for " + this.state.year}</center></h3>
-			  
-			  <ColumnChart data={[
-					["Jan", this.state.Jan], 
-					["Feb", this.state.Feb], 
-					["Mar", this.state.Mar],
-					["Apr", this.state.Apr],
-					["May", this.state.May],
-					["Jun", this.state.Jun],
-					["Jul", this.state.Jul],
-					["Aug", this.state.Aug],
-					["Sep", this.state.Sep],
-					["Oct", this.state.Oct],
-					["Nov", this.state.Nov],
-					["Dec", this.state.Dec]
-				]} />	
-			
-			
-			<form onSubmit={this.onSubmitBudget}>
-				<label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
-				<input type="text" 
-					placeholder={this.state.budget} 
-					className="form-control" 
-					value={this.state.budget} 
-					onChange={this.onChangeBudget}/>
-				<input type="submit" value="Update" className="btn btn-info" /></label>
-			</form>
-			
-			<div className = "spacing">
-			<h5>Budget: ${this.state.budget} </h5>
-			<h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5>
-			<h5> ---------------------------- </h5>
-			<h5>Balance: ${this.state.balance} </h5>
-			</div>
-			  
-			  <div className = "divider"/>
-				<div className="container">
-				  <nav className="navbar navbar-expand-sm navbar-light bg-light">
-					<div className="collpase navbar-collapse">
-					  <ul className="navbar-nav mr-auto">
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jan')}}>Jan</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Feb')}}>Feb</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Mar')}}>Mar</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Apr')}}>Apr</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('May')}}>May</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jun')}}>Jun</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jul')}}>Jul</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Aug')}}>Aug</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Sep')}}>Sep</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Oct')}}>Oct</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Nov')}}>Nov</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Dec')}}>Dec</button>
-					  </ul>
+								onClick={this.onLogoutClick}
+								className="btn btn-info">
+								<Link to = "login" className = "nav-link">
+								Logout</Link></button>
+							</li>
+						</ul>
 					</div>
-				  </nav>
-				</div>
+				</nav>
 				
 				<div className = "spacing">
+					<div className = "divider">
+						<form onSubmit={this.onSubmit}>
+							<center><label>Current Year:
+								<input type="text" 
+									placeholder={this.state.year} 
+									className="form-control" 
+									value={this.state.year} 
+									onChange={this.onChangeYear}/>	
+									<input type="submit" value="Update" className="btn btn-info" />
+							</label></center>
+							
+						</form>
+					</div>
+					<h3><center>{"Expenses for " + this.state.year}</center></h3>
+			  
+					<ColumnChart data={[
+						["Jan", this.state.Jan], 
+						["Feb", this.state.Feb], 
+						["Mar", this.state.Mar],
+						["Apr", this.state.Apr],
+						["May", this.state.May],
+						["Jun", this.state.Jun],
+						["Jul", this.state.Jul],
+						["Aug", this.state.Aug],
+						["Sep", this.state.Sep],
+						["Oct", this.state.Oct],
+						["Nov", this.state.Nov],
+						["Dec", this.state.Dec]
+					]} />	
+
+					<form onSubmit={this.onSubmitBudget}>
+						<label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
+						<input type="text" 
+							placeholder={this.state.budget} 
+							className="form-control" 
+							value={this.state.budget} 
+							onChange={this.onChangeBudget}/>
+						<input type="submit" value="Update" className="btn btn-info" /></label>
+					</form>
+			
+					<h5>Budget: ${this.state.budget} </h5>
+					<h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5>
+					<h5> ---------------------------- </h5>
+					<h5>Balance: ${this.state.balance} </h5>
+			  
+					<div className="container">
+					  <nav className="navbar navbar-expand-sm navbar-light bg-light">
+						<div className="collpase navbar-collapse">
+						  <ul className="navbar-nav mr-auto">
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jan')}}>Jan</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Feb')}}>Feb</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Mar')}}>Mar</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Apr')}}>Apr</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('May')}}>May</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jun')}}>Jun</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jul')}}>Jul</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Aug')}}>Aug</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Sep')}}>Sep</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Oct')}}>Oct</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Nov')}}>Nov</button>
+							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Dec')}}>Dec</button>
+						  </ul>
+						</div>
+					  </nav>
+					</div>
 				
-                <link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
-				<BootstrapTable 
-					data={this.state.expensesArray} 
-					headerStyle={ { background: '#3cb3bb' } }
-					striped hover 
-					version='4' 
-					cellEdit={ cellEdit } 
-					options={ options }
-					pagination search multiColumnSearch>
-					  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
-					  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
-					  <TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
-					  <TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
-					  <TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
-					  <TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
-				</BootstrapTable>
-				
+					<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+					<BootstrapTable 
+						data={this.state.expensesArray} 
+						headerStyle={ { background: '#3cb3bb' } }
+						striped hover 
+						version='4' 
+						cellEdit={ cellEdit } 
+						options={ options }
+						pagination search multiColumnSearch>
+						  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+						  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+						  <TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
+						  <TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+						  <TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+						  <TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+					</BootstrapTable>
 				</div>
-            </div>
+			</div>
         )
     }
 }
