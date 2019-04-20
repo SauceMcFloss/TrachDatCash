@@ -452,10 +452,10 @@ class TodosList extends Component {
 									placeholder={this.state.year} 
 									className="form-control" 
 									value={this.state.year} 
-									onChange={this.onChangeYear}/>	
-									<input type="submit" value="Update" className="btn btn-info" />
-							</label></center>
-							
+									onChange={this.onChangeYear}/>
+								</label>
+								<input type="submit" value="Update" className="btn btn-info" />
+							</center>
 						</form>
 					</div>
 					<h3><center>{"Expenses for " + this.state.year}</center></h3>
