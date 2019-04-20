@@ -447,16 +447,16 @@ class TodosList extends Component {
 				<div className = "spacing">
 					<h3><center>{"Expenses for " + this.state.year}</center></h3>
 					<div className = "flex">
-						<div className = "divider">
+						<div className = "divider" style={{width: 400}}>
 							<form onSubmit={this.onSubmit}>
-								<center><label>Current Year:
+								<label><center>Current Year: </center>
 									<input type="text" 
 										placeholder={this.state.year} 
 										className="form-control" 
 										value={this.state.year} 
 										onChange={this.onChangeYear}
 									/>
-								</label></center>
+								</label>
 								<input type="submit" value="Update" className="btn btn-info" />
 							</form>
 						</div>
@@ -476,32 +476,34 @@ class TodosList extends Component {
 							["Dec", this.state.Dec]
 						]} />	
 					</div>
-			  
-					<div className="container">
-					  <nav className="navbar navbar-expand-sm navbar-light bg-light">
-						<div className="collpase navbar-collapse">
-						  <ul className="navbar-nav mr-auto">
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jan')}}>Jan</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Feb')}}>Feb</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Mar')}}>Mar</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Apr')}}>Apr</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('May')}}>May</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jun')}}>Jun</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jul')}}>Jul</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Aug')}}>Aug</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Sep')}}>Sep</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Oct')}}>Oct</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Nov')}}>Nov</button>
-							  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Dec')}}>Dec</button>
-						  </ul>
+					
+					<div className = "flex">
+						<div className="container">
+						  <nav className="navbar navbar-expand-sm navbar-light bg-light">
+							<div className="collpase navbar-collapse">
+							  <ul className="navbar-nav mr-auto">
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jan')}}>Jan</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Feb')}}>Feb</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Mar')}}>Mar</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Apr')}}>Apr</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('May')}}>May</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jun')}}>Jun</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jul')}}>Jul</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Aug')}}>Aug</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Sep')}}>Sep</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Oct')}}>Oct</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Nov')}}>Nov</button>
+								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Dec')}}>Dec</button>
+							  </ul>
+							</div>
+						  </nav>
 						</div>
-					  </nav>
 					</div>
 					
 					<div className = "flex">
-						<div>
+						<div className = "divider">
 							<form onSubmit={this.onSubmitBudget}>
-								<center><label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
+								<label><center>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}</center>
 									<input type="text" 
 										placeholder={this.state.budget} 
 										className="form-control" 
@@ -509,16 +511,16 @@ class TodosList extends Component {
 										onChange={this.onChangeBudget}/>
 									</label>
 									<input type="submit" value="Update" className="btn btn-info" />
-								</center>
 							</form>
-							<div className = "divider">
+							<div className = "divider" style={{width: 400}}>
 								<h5>Budget: ${this.state.budget} </h5>
-								<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
+								<h5>{this.state.month + " " + this.state.year + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
 								<h5> ---------------------------- </h5>
 								<h5>Balance: ${this.state.balance} </h5>
 							</div>
 						</div>
-						<div>
+						
+						<div>						
 							<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
 							<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 							<BootstrapTable 
