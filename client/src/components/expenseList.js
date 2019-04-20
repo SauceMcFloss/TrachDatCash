@@ -127,7 +127,7 @@ class TodosList extends Component {
 				
                 <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
                 <div className = "spacing">
-				   <h4><span class = "glyphicon glyphicon-asterick"> To edit an expense, just double click on the item you want updated</span><h4>
+				   <h4><span class = "glyphicon glyphicon-asterick"> To edit an expense, just double click on the item you want updated</span></h4>
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray}
