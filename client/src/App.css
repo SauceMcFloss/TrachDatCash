@@ -13,9 +13,18 @@
   height: 100%;
   
 }
-.flex{
+.flex_row{
 	display: flex;
 	flex-direction: row;
+	flex-wrap: nowrap;
+	height: 100%;
+}
+
+.flex_column{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	height: 100%;
 }
 .body
 {

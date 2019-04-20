@@ -335,19 +335,19 @@ class TodosList extends Component {
 					<div className="collpase navbar-collapse">
 						<ul className="navbar-nav mr-auto">
 							<li className="navbar-item">
-							  <Link to="/dashboard" className="nav-link">All Expenses</Link>
+								<Link to="/dashboard" className="nav-link">All Expenses</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/create" className="nav-link">Create Expense</Link>
+								<Link to="/create" className="nav-link">Create Expense</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/categories" className="nav-link">Categories</Link>
+								<Link to="/categories" className="nav-link">Categories</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/monthly" className="nav-link">Monthly</Link>
+								<Link to="/monthly" className="nav-link">Monthly</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/group" className="nav-link">Group</Link>
+								<Link to="/group" className="nav-link">Group</Link>
 							</li>
 						</ul>
 						<ul className = "navbar-nav ml-auto">
@@ -393,25 +393,25 @@ class TodosList extends Component {
 					colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
 				/>
 	
-				<center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
 				<div className="container">
-				  <nav className="navbar navbar-expand-sm navbar-light bg-light">
-					<div className="collpase navbar-collapse">
-					  <ul className="navbar-nav mr-auto">
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Bills')}}>Bills</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Dining')}}>Dining Out</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Education')}}>Education</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Entertainment')}}>Entertainment</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Groceries')}}>Groceries</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Health')}}>Health</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Shopping')}}>Shopping</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Transportation')}}>Transportation</button>
-						  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Other')}}>Other</button>
-					  </ul>
-					</div>
-				  </nav>
+					<nav className="navbar navbar-expand-sm navbar-light bg-light">
+						<div className="collpase navbar-collapse">
+							<ul className="navbar-nav mr-auto">
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Bills')}}>Bills</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Dining')}}>Dining Out</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Education')}}>Education</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Entertainment')}}>Entertainment</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Groceries')}}>Groceries</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Health')}}>Health</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Shopping')}}>Shopping</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Transportation')}}>Transportation</button>
+								<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Other')}}>Other</button>
+							</ul>
+						</div>
+					</nav>
 				</div>
-
+				
+				<h5>{this.state.category + " " + this.state.year + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray} 
