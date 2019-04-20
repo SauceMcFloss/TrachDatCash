@@ -80,7 +80,12 @@ class TodosList extends Component {
 		this.props.logoutUser();
 	};
 	
-	componentDidMount() {		
+	componentDidMount() {
+		// Remove token from local storage
+		localStorage.removeItem('pageToken');
+		// Set token to localStorage
+		localStorage.setItem('pageToken', '/categories');
+		
 		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
         axios.post('/expenses/category', {
 			id: idOfUser,
