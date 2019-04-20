@@ -7,7 +7,7 @@ class Footer extends React.Component{
 		
 		<footer className = "color_back" >
 			
-				<div className = "footer sticky-bottom">
+				<div className = "footer">
 					<p> Track Dat Ca$h, Group 13</p>
 				</div>
 			
