@@ -293,7 +293,7 @@ class CreateExpense extends Component {
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <Select
+                        <CreatableSelect
 							name="Group Code"
 							placeholder={'Select group code...'}
 							value={selectedCode}
