@@ -176,6 +176,11 @@ class TodosList extends Component {
 					</div>
 				</nav>
 			
+			<div style={{ marginTop: 50 }}>
+				<h1><center>Group Expenses</center></h1>
+				<center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
+			</div>
+			
 			<div className = "spacing">
 				<div className = "divider">	
 					<form onSubmit={this.onSubmit}>
@@ -190,9 +195,6 @@ class TodosList extends Component {
 						</center>
 					</form><center><div>{"Your account's group code is: " + this.state.userCode}</div></center>
 				</div>
-				
-				<h3><center>Group Expenses</center></h3>
-				<center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
 				
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 

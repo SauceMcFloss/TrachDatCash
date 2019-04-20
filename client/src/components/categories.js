@@ -367,9 +367,11 @@ class TodosList extends Component {
 						</ul>
 					</div>
 				</nav>
-			
+				
+				<div style={{ marginTop: 50 }}>
+					<h1><center>{"Expenses Breakdown for " + this.state.year}</center></h1>
+				</div>
 				<div className = "spacing">
-					<h3><center>{"Expenses Breakdown for " + this.state.year}</center></h3>
 					<div className = "flex_row">
 						<div className = "divider" style={{width: 400}}>
 							<form onSubmit={this.onSubmit}>
@@ -387,15 +389,15 @@ class TodosList extends Component {
 				  
 						<PieChart 
 							data={[
-								["Bills", this.state.bills], 
-								["Dining Out", this.state.dining], 
-								["Education", this.state.education], 
-								["Entertainment", this.state.entertainment], 
-								["Groceries", this.state.groceries], 
-								["Health", this.state.health], 
-								["Shopping", this.state.shopping], 
-								["Transportation", this.state.transportation], 
-								["Other", this.state.other]
+								["Bills", parseFloat(this.state.bills).toFixed( 2 )], 
+								["Dining Out", parseFloat(this.state.dining).toFixed( 2 )], 
+								["Education", parseFloat(this.state.education).toFixed( 2 )], 
+								["Entertainment", parseFloat(this.state.entertainment).toFixed( 2 )], 
+								["Groceries", parseFloat(this.state.groceries).toFixed( 2 )], 
+								["Health", parseFloat(this.state.health).toFixed( 2 )], 
+								["Shopping", parseFloat(this.state.shopping).toFixed( 2 )], 
+								["Transportation", parseFloat(this.state.transportation).toFixed( 2 )], 
+								["Other", parseFloat(this.state.other).toFixed( 2 )]
 							]} 
 							colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
 						/>

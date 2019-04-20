@@ -468,8 +468,10 @@ class TodosList extends Component {
 					</div>
 				</nav>
 				
+				<div style={{ marginTop: 50 }}>
+					<h1><center>{"Expenses for " + this.state.year}</center></h1>
+				</div>
 				<div className = "spacing">
-					<h3><center>{"Expenses for " + this.state.year}</center></h3>
 					<div className = "flex_row">
 						<div className = "divider" style={{width: 400}}>
 							<form onSubmit={this.onSubmit}>
@@ -486,18 +488,18 @@ class TodosList extends Component {
 						</div>
 				  
 						<ColumnChart data={[
-							["Jan", this.state.Jan], 
-							["Feb", this.state.Feb], 
-							["Mar", this.state.Mar],
-							["Apr", this.state.Apr],
-							["May", this.state.May],
-							["Jun", this.state.Jun],
-							["Jul", this.state.Jul],
-							["Aug", this.state.Aug],
-							["Sep", this.state.Sep],
-							["Oct", this.state.Oct],
-							["Nov", this.state.Nov],
-							["Dec", this.state.Dec]
+							["Jan", parseFloat(this.state.Jan).toFixed( 2 )], 
+							["Feb", parseFloat(this.state.Feb).toFixed( 2 )], 
+							["Mar", parseFloat(this.state.Mar).toFixed( 2 )],
+							["Apr", parseFloat(this.state.Apr).toFixed( 2 )],
+							["May", parseFloat(this.state.May).toFixed( 2 )],
+							["Jun", parseFloat(this.state.Jun).toFixed( 2 )],
+							["Jul", parseFloat(this.state.Jul).toFixed( 2 )],
+							["Aug", parseFloat(this.state.Aug).toFixed( 2 )],
+							["Sep", parseFloat(this.state.Sep).toFixed( 2 )],
+							["Oct", parseFloat(this.state.Oct).toFixed( 2 )],
+							["Nov", parseFloat(this.state.Nov).toFixed( 2 )],
+							["Dec", parseFloat(this.state.Dec).toFixed( 2 )]
 						]} />	
 					</div>
 					
