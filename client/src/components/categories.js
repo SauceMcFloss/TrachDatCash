@@ -263,6 +263,7 @@ class TodosList extends Component {
 				sum = sumBy(temp, 'amount');
                 this.setState({ 
 					expensesArray: temp,
+					category: category,
 					total: sum
 				});
             })
