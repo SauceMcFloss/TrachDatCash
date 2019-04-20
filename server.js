@@ -304,6 +304,37 @@ expenseRoutes.post("/login", (req, res) => {
 	});
 });
 
+// @route POST /expenses/updateBudget/:id
+// @desc Update user's budget with specified id
+expenseRoutes.route('/updateBudget/:id').post(function(req, res){
+	// Find user by the specified id
+    User.findById(req.params.id, function(err, user){
+		if(!user){
+            res.status(404).send("data is not found");
+		}
+        else{
+			// Save new data over old data for specified user
+            user.budget = req.body.budget;
+            user.save().then(user => {
+                res.json('User budget updated!');
+            })
+            .catch(err => {
+                res.status(400).send("Update not possible");
+            });
+		}
+    });
+});
+
+// @route GET /expenses/userBudget/:id
+// @desc Return specific user from db
+expenseRoutes.route('/user/:id').get(function(req, res){
+    let id = req.params.id;
+	// Find expense by the specified id
+    User.findById(id, function(err, user){
+        res.json(user);
+    });
+});
+
 // Define standard path extension for route handler
 app.use('/expenses', expenseRoutes);
 

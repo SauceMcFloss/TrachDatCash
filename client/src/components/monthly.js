@@ -62,7 +62,7 @@ class TodosList extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 		this.onSubmitBudget = this.onSubmitBudget.bind(this);
 		this.onRowDoubleClick = this.onRowDoubleClick.bind(this);
-		
+			
         this.state = {
 			expensesArray: [],
 			month: 'Jan',
@@ -79,7 +79,7 @@ class TodosList extends Component {
 			Oct: 0,
 			Nov: 0,
 			Dec: 0,
-			budget: jwt_decode(localStorage.getItem("jwtToken")).budget,
+			budget: 0,
 			balance: 0,
 			total: 0
 		};
@@ -114,6 +114,16 @@ class TodosList extends Component {
 				});
             })
             .catch(function (error){
+                console.log(error);
+            })
+		
+		axios.get('/expenses/user/'+idOfUser)
+            .then(response => {
+                this.setState({
+                    budget: response.data.budget,
+                })   
+            })
+            .catch(function (error) {
                 console.log(error);
             })
 		
@@ -357,7 +367,7 @@ class TodosList extends Component {
         });        
     }
 	
-	onChangeBudget(e) {
+	onChangeBudget(e) {			
 		this.setState({
             budget: e.target.value,
 			balance: "-"
@@ -365,12 +375,21 @@ class TodosList extends Component {
     }
 	
 	onSubmitBudget(e) {
-		e.preventDefault();	
+		e.preventDefault();		
 
 		this.setState({
 			  budget: parseFloat(this.state.budget).toFixed( 2 ),
 			  balance: parseFloat(this.state.budget - this.state.total).toFixed( 2 )
 		});
+		
+		// Update user's budget in db
+		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
+		const obj = {
+            budget: this.state.budget
+        };
+        console.log(obj);
+        axios.post('/expenses/updateBudget/'+idOfUser, obj)
+            .then(res => console.log(res.data));
 	}
 	
 	onSubmit(e) {	
