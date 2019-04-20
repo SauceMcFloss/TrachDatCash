@@ -8,7 +8,7 @@ class Footer extends React.Component{
 		<footer className = "color_back" >
 			
 				<div className = "footer">
-					<p> Track Dat Ca$h, Group 13</p>
+					<center><p> Track Dat Ca$h, Group 13</p></center>
 				</div>
 			
 		</footer>
