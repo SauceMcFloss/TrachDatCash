@@ -11,12 +11,12 @@ import { logoutUser } from "../actions/authActions";
 import jwt_decode from "jwt-decode";
 const jwt = require("jsonwebtoken");
 
-// Load config keys
-const secretOrKey = "this-is-a-really-long-secret-key-yeehaw";
-
 import logo from "../o-logo.png";
 
 import  { Redirect } from 'react-router-dom';
+
+// Load config keys
+const secretOrKey = "this-is-a-really-long-secret-key-yeehaw";
 
 var ReactBsTable = require('react-bootstrap-table');
 var BootstrapTable = ReactBsTable.BootstrapTable;
