@@ -402,7 +402,7 @@ class TodosList extends Component {
 						/>
 					</div>
 	
-					<div className="container">
+					<div className="container" style={{ marginTop: 50 }}>
 						<nav className="navbar navbar-expand-sm navbar-light bg-light">
 							<div className="collpase navbar-collapse">
 								<ul className="navbar-nav mr-auto">
@@ -420,24 +420,26 @@ class TodosList extends Component {
 						</nav>
 					</div>
 					
-					<h5>{this.state.category + " " + this.state.year + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
-					<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
-					<BootstrapTable 
-						data={this.state.expensesArray} 
-						headerStyle={ { background: '#3cb3bb' } }
-						striped hover 
-						version='4' 
-						cellEdit={ cellEdit } 
-						options={ options }
-						pagination 
-						multiColumnSearch>
-							<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
-							<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
-							<TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
-							<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
-							<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
-							<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
-					</BootstrapTable>
+					<div style={{ marginTop: 20 }}>
+						<h5>{this.state.category + " " + this.state.year + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
+						<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+						<BootstrapTable 
+							data={this.state.expensesArray} 
+							headerStyle={ { background: '#3cb3bb' } }
+							striped hover 
+							version='4' 
+							cellEdit={ cellEdit } 
+							options={ options }
+							pagination 
+							multiColumnSearch>
+								<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+								<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+								<TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
+								<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+								<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+								<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+						</BootstrapTable>
+					</div>
 				</div>
             </div>
         )
