@@ -17,6 +17,9 @@
   
   
 }
+.spacingL{
+	padding: 90px;
+}
 .flex_row{
 	display: flex;
 	flex-direction: row;
