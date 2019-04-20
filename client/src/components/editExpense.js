@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import CreatableSelect from 'react-select/lib/Creatable';
 
 import { Link } from 'react-router-dom';
 
@@ -160,9 +161,9 @@ class EditExpense extends Component {
         });
     }
 	
-	onChangeGroupCode(e) {
+	onChangeGroupCode(selectedCode) {
         this.setState({
-            groupCode: e.target.value
+            groupCode: selectedCode.value
         });
     }
 
@@ -195,6 +196,14 @@ class EditExpense extends Component {
 		const { selectedCategory } = this.state;
 		const { selectedMonth } = this.state;
 		const { selectedDay } = this.state;
+		const { selectedCode } = this.state;
+		
+		const optionsCode = [
+		  { value: '', label: 'No group code' },
+		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode, label: 'User group code' }
+		];
+		
+		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
 	
         return (
             <div className= "App">
@@ -289,11 +298,13 @@ class EditExpense extends Component {
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <input  type="text"
-                                className="form-control"
-                                value={this.state.groupCode}
-                                onChange={this.onChangeGroupCode}
-                                />
+                        <CreatableSelect
+							name="Group Code"
+							placeholder={this.state.groupCode}
+							value={selectedCode}
+							options={optionsCode}
+							onChange={this.onChangeGroupCode}
+						/>
                     </div>
 
                     <br />

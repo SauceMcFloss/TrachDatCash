@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import CreatableSelect from 'react-select/lib/Creatable';
 
 import { Link } from 'react-router-dom';
 
@@ -10,7 +11,7 @@ import { logoutUser } from "../actions/authActions";
 
 import jwt_decode from "jwt-decode";
 import logo from "../o-logo.png";
-
+var today = new Date();
 
 const optionsCategory = [
   { value: 'Bills', label: 'Bills' },
@@ -73,7 +74,6 @@ const optionsDay = [
   { value: 31, label: 31 }
 ];
 
-
 class CreateExpense extends Component {
 
     constructor(props) {
@@ -92,9 +92,9 @@ class CreateExpense extends Component {
             description: '',
             amount: '',
             category: '',
-            selectedMonth: '',
-            selectedDay: '',
-            year: '',
+            selectedMonth: optionsMonth[today.getMonth()].label,
+            selectedDay: optionsDay[today.getDate() - 1].label,
+            year: today.getFullYear(),
 			groupCode: ''
         }
     }
@@ -140,9 +140,9 @@ class CreateExpense extends Component {
         });
     }
 	
-	onChangeGroupCode(e) {
+	onChangeGroupCode(selectedCode) {
         this.setState({
-            groupCode: e.target.value
+            groupCode: selectedCode.value
         });
     }
 
@@ -182,6 +182,14 @@ class CreateExpense extends Component {
 		const { selectedCategory } = this.state;
 		const { selectedMonth } = this.state;
 		const { selectedDay } = this.state;
+		const { selectedCode } = this.state;
+		
+		const optionsCode = [
+		  { value: '', label: 'No group code' },
+		  { value: jwt_decode(localStorage.getItem("jwtToken")).groupCode, label: 'Your group code' }
+		];
+		
+		const codeOfUser = jwt_decode(localStorage.getItem("jwtToken")).groupCode;
 		
         return (
 			<div className = "App">	
@@ -227,25 +235,27 @@ class CreateExpense extends Component {
                     <div className="form-group"> 
                         <label>Description: </label>
                         <input  type="text"
-                                className="form-control"
-                                value={this.state.description}
-                                onChange={this.onChangeDescription}
-                                />
+							className="form-control"
+							placeholder={'Enter description...'}
+							value={this.state.description}
+							onChange={this.onChangeDescription}
+						/>
                     </div>
                     <div className="form-group">
                         <label>Amount: </label>
                         <input 
 							type="text" 
 							className="form-control"
+							placeholder={'Enter amount...'}
 							value={this.state.amount}
 							onChange={this.onChangeAmount}
-							/>
+						/>
                     </div>
 					<div className="form-group">
 					  <label>Category: </label>
 					  <Select
 						name="Category"
-						placeholder={this.state.category}
+						placeholder={'Select category...'}
 						value={selectedCategory}
 						options={optionsCategory}
 						onChange={this.onChangeCategory}
@@ -255,7 +265,7 @@ class CreateExpense extends Component {
 					  <label>Month: </label>
 					  <Select
 						name="Month"
-						placeholder={this.state.month}
+						placeholder={optionsMonth[today.getMonth()].label + "?"}
 						value={selectedMonth}
 						options={optionsMonth}
 						onChange={this.onChangeMonth}
@@ -265,7 +275,7 @@ class CreateExpense extends Component {
 					  <label>Day: </label>
 					  <Select
 						name="Day"
-						placeholder={this.state.day}
+						placeholder={optionsDay[today.getDate() - 1].label + "?"}
 						value={selectedDay}
 						options={optionsDay}
 						onChange={this.onChangeDay}
@@ -273,19 +283,23 @@ class CreateExpense extends Component {
 					</div>
 					<div className="form-group"> 
                         <label>Year: </label>
-                        <input  type="text"
-                                className="form-control"
-                                value={this.state.year}
-                                onChange={this.onChangeYear}
-                                />
+                        <input  
+							type="text"
+							className="form-control"
+							placeholder={'Enter year...'}
+							value={this.state.year}
+							onChange={this.onChangeYear}
+						/>
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <input  type="text"
-                                className="form-control"
-                                value={this.state.groupCode}
-                                onChange={this.onChangeGroupCode}
-                                />
+                        <CreatableSelect
+							name="Group Code"
+							placeholder={'Select group code...'}
+							value={selectedCode}
+							options={optionsCode}
+							onChange={this.onChangeGroupCode}
+						/>
                     </div>
 
                     <div className="form-group">
