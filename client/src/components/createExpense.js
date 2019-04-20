@@ -10,6 +10,7 @@ import { logoutUser } from "../actions/authActions";
 
 import jwt_decode from "jwt-decode";
 import logo from "../o-logo.png";
+var today = new Date();
 
 const optionsCategory = [
   { value: 'Bills', label: 'Bills' },
@@ -90,9 +91,9 @@ class CreateExpense extends Component {
             description: '',
             amount: '',
             category: '',
-            selectedMonth: optionsMonth[Date.getMonth()],
-            selectedDay: Date.getDate(),
-            year: Date.getFullYear(),
+            selectedMonth: optionsMonth[today.getMonth()],
+            selectedDay: today.getDate(),
+            year: today.getFullYear(),
 			groupCode: ''
         }
     }
