@@ -365,21 +365,21 @@ class TodosList extends Component {
     }
 	
 	onSubmitBudget(e) {
-		e.preventDefault();
-
-		// Update user's budget in db
-		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
-		const obj = {
-            budget: e.target.value
-        };
-        console.log(obj);
-        axios.post('/expenses/updateBudget/'+idOfUser, obj)
-            .then(res => console.log(res.data));		
+		e.preventDefault();		
 
 		this.setState({
 			  budget: parseFloat(this.state.budget).toFixed( 2 ),
 			  balance: parseFloat(this.state.budget - this.state.total).toFixed( 2 )
 		});
+		
+		// Update user's budget in db
+		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
+		const obj = {
+            budget: this.state.budget
+        };
+        console.log(obj);
+        axios.post('/expenses/updateBudget/'+idOfUser, obj)
+            .then(res => console.log(res.data));
 	}
 	
 	onSubmit(e) {	
