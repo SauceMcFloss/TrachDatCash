@@ -97,6 +97,10 @@ class CreateExpense extends Component {
             year: today.getFullYear(),
 			groupCode: ''
         }
+		
+		this.onChangeDay(this.state.selectedDay);
+		this.onChangeMonth(this.state.selectedMonth);
+		this.onChangeYear(this.state.year);
     }
 	
 	onLogoutClick = e => {
