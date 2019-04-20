@@ -11,7 +11,7 @@ import { logoutUser } from "../actions/authActions";
 import jwt_decode from "jwt-decode";
 
 // Load config keys
-const keys = require("../../../config/keys");
+const secretOrKey: "this-is-a-really-long-secret-key-yeehaw";
 
 import logo from "../o-logo.png";
 
@@ -98,7 +98,7 @@ class TodosList extends Component {
 		// Sign token
 		jwt.sign(
 			page,
-			keys.secretOrKey,
+			secretOrKey,
 			{
 				expiresIn: 31556926 // 1 year in seconds
 			}
