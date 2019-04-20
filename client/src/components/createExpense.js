@@ -266,7 +266,7 @@ class CreateExpense extends Component {
 					  <label>Month: </label>
 					  <Select
 						name="Month"
-						placeholder={this.state.month}
+						placeholder={optionsMonth[today.getMonth()].label}
 						value={selectedMonth}
 						options={optionsMonth}
 						onChange={this.onChangeMonth}
@@ -276,7 +276,7 @@ class CreateExpense extends Component {
 					  <label>Day: </label>
 					  <Select
 						name="Day"
-						placeholder={this.state.day}
+						placeholder={optionsDay[today.getDate() - 1].label}
 						value={selectedDay}
 						options={optionsDay}
 						onChange={this.onChangeDay}
