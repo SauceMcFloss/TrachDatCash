@@ -1,13 +1,11 @@
 .body{
-	margin-top: auto;
-	margin-bottom: auto;
-	background-color:  #94D6B7;
-	height: auto;
-	width: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
 }
 .container{
 	width: auto;
-	height: auto;
+	max-width: 900px;
 	
 	padding: 0 15px;
 	background-color: #94D6B7;
@@ -16,11 +14,10 @@
 	margin: 20px 0;
 	
 	  font-size: 20px;
-	  height: auto;
-	  width: auto;
+	  
 }
 .badge{
 	background-color : #94D6B7;
-	height: auto;
-	width: auto;
+	
+	
 }
