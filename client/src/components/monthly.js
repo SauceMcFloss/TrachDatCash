@@ -417,19 +417,19 @@ class TodosList extends Component {
 					<div className="collpase navbar-collapse">
 						<ul className="navbar-nav mr-auto">
 							<li className="navbar-item">
-							  <Link to="/dashboard" className="nav-link">All Expenses</Link>
+								<Link to="/dashboard" className="nav-link">All Expenses</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/create" className="nav-link">Create Expense</Link>
+								<Link to="/create" className="nav-link">Create Expense</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/categories" className="nav-link">Categories</Link>
+								<Link to="/categories" className="nav-link">Categories</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/monthly" className="nav-link">Monthly</Link>
+								<Link to="/monthly" className="nav-link">Monthly</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/group" className="nav-link">Group</Link>
+								<Link to="/group" className="nav-link">Group</Link>
 							</li>
 						</ul>
 						<ul className = "navbar-nav ml-auto">
@@ -445,6 +445,7 @@ class TodosList extends Component {
 				</nav>
 				
 				<div className = "spacing">
+					<h3><center>{"Expenses for " + this.state.year}</center></h3>
 					<div className = "flex">
 						<div className = "divider">
 							<form onSubmit={this.onSubmit}>
@@ -458,8 +459,19 @@ class TodosList extends Component {
 									<input type="submit" value="Update" className="btn btn-info" />
 								</center>
 							</form>
+							
+							<form onSubmit={this.onSubmitBudget}>
+							<center><label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
+								<input type="text" 
+									placeholder={this.state.budget} 
+									className="form-control" 
+									value={this.state.budget} 
+									onChange={this.onChangeBudget}/>
+								</label>
+								<input type="submit" value="Update" className="btn btn-info" />
+							</center>
+							</form>
 						</div>
-						<h3><center>{"Expenses for " + this.state.year}</center></h3>
 				  
 						<ColumnChart data={[
 							["Jan", this.state.Jan], 
@@ -475,20 +487,6 @@ class TodosList extends Component {
 							["Nov", this.state.Nov],
 							["Dec", this.state.Dec]
 						]} />	
-					</div>
-					
-					<div className = "divider">
-						<form onSubmit={this.onSubmitBudget}>
-							<center><label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
-								<input type="text" 
-									placeholder={this.state.budget} 
-									className="form-control" 
-									value={this.state.budget} 
-									onChange={this.onChangeBudget}/>
-								</label>
-								<input type="submit" value="Update" className="btn btn-info" />
-							</center>
-						</form>
 					</div>
 			
 					<h5>Budget: ${this.state.budget} </h5>
