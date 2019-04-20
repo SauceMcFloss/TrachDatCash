@@ -90,9 +90,9 @@ class CreateExpense extends Component {
             description: '',
             amount: '',
             category: '',
-            selectedMonth: '',
-            selectedDay: '',
-            year: '',
+            selectedMonth: optionsMonth[Date.getMonth()],
+            selectedDay: Date.getDate(),
+            year: Date.getFullYear(),
 			groupCode: ''
         }
     }
@@ -290,7 +290,7 @@ class CreateExpense extends Component {
                         <label>Group Code: </label>
                         <Select
 							name="Group Code"
-							placeholder={this.state.groupCode}
+							placeholder={'Enter group code'}
 							value={selectedCode}
 							options={optionsCode}
 							onChange={this.onChangeGroupCode}
