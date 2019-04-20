@@ -41,7 +41,7 @@ class Landing extends Component {
 						</ul>
 					</div>
 					</nav>
-				
+				<div className = "spacingL">
 				<div className = "row">
 					<div className = "Picture">
 							<center><h1><img src = {picture} width = "400" height = "300" class = "rounded" alt = ""/></h1></center>
@@ -69,6 +69,7 @@ class Landing extends Component {
 						<div className = "spacingpic"></div>
 						<center><img src = {logo} width = "50" height = "50" class="img-circle"  alt = ""/></center>
 					</div>
+				</div>
 				</div>
 		</div>
 		

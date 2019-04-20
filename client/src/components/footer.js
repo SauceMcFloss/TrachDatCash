@@ -1,14 +1,15 @@
+
 import React from "react";
 
 class Footer extends React.Component{
 	render(){
 		return(
 		
-		<footer className = "footer text-center" >
+		<footer className = "footer" >
 			
-				<div className = "container sticky-bottom">
-					<p className = "footer-text"> Track Dat Ca$h,Group 13</p>
-				</div>
+				
+					<center><p> Track Dat Ca$h, Group 13</p></center>
+				
 			
 		</footer>
 		

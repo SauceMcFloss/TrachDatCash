@@ -8,7 +8,7 @@
 .AppM{
 	background-color:#E3E4E2;
 	height: auto;
-	width: auto;
+	width: 100%;
 }
 .AppL{
 	background-color:#E3E4E2;
@@ -16,6 +16,9 @@
   width: auto;
   
   
+}
+.spacingL{
+	padding: 80px;
 }
 .flex_row{
 	display: flex;
@@ -64,15 +67,22 @@
 	margin-bottom: 0;
      border-radius: 0;
 	background-color: #94D6B7;
+	width: 100%;
+	
 }
 
 .navbar-item{
 	color: #263830;
 	margin-bottom: 0;
       border-radius: 0;
+	  width: 100%
+	  
 }
 .spacing{
-	padding: 100px;
+	padding-left: 100px;
+	padding-right:100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 .spacingpic{
 	padding-top: 10px;
@@ -89,6 +99,7 @@
     
 .btn-custom{
 	background-color: #94D6B7;
+	font-family: 'Script';
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
