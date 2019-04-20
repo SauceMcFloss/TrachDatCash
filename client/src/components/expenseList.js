@@ -14,8 +14,6 @@ import logo from "../o-logo.png";
 
 import  { Redirect } from 'react-router-dom';
 
-const jwt = require("jsonwebtoken");
-
 // Load config keys
 const secretOrKey = "this-is-a-really-long-secret-key-yeehaw";
 
@@ -46,6 +44,11 @@ class TodosList extends Component {
 	};
 
     componentDidMount() {
+		// Remove token from local storage
+		localStorage.removeItem('pageToken');
+		// Set token to localStorage
+		localStorage.setItem('pageToken', '/dashboard');
+		
 		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
 		
         axios.post('/expenses/getAllExpenses', {
@@ -90,23 +93,6 @@ class TodosList extends Component {
 		const cellEdit = {
 			mode: 'dbclick' // double click cell to edit
 		  };
-		  
-		// Remove token from local storage
-		localStorage.removeItem("jwtTokenPage");
-		// Create JWT Payload
-		const page = {
-			url: '/dashboard'
-		};
-		// Sign token
-		jwt.sign(
-			page,
-			secretOrKey,
-			{
-				expiresIn: 31556926 // 1 year in seconds
-			}
-		)
-		// Set token to localStorage
-		localStorage.setItem("jwtTokenPage", page);
 		  
         return (
             <div className = "App">
