@@ -69,7 +69,8 @@ class Login extends Component {
             </div>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="form-group">
-				 <label htmlFor="email">    Email: </label>
+				<div className = "spacing_email">
+				 <label htmlFor="email">Email: </label>
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -80,6 +81,7 @@ class Login extends Component {
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
+				</div>
                
                 <span className="red-text">
                   {errors.email}

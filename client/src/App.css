@@ -30,6 +30,9 @@
 	 background-color:#E3E4E2;
 	height: 660px;
 }
+.spacing_email{
+	padding-left: 2px;
+}
 
 .navbar-custom{
 	margin-bottom: 0;
