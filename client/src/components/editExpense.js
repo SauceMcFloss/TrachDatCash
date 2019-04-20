@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import CreatableSelect from 'react-select/lib/Creatable';
 
 import { Link } from 'react-router-dom';
 
@@ -300,7 +301,7 @@ class EditExpense extends Component {
                     </div>
 					<div className="form-group"> 
                         <label>Group Code: </label>
-                        <Select
+                        <CreatableSelect
 							name="Group Code"
 							placeholder={this.state.groupCode}
 							value={selectedCode}
