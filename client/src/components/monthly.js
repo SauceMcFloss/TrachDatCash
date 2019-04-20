@@ -475,14 +475,15 @@ class TodosList extends Component {
 						["Dec", this.state.Dec]
 					]} />	
 					<div className = "divider">
-					<form onSubmit={this.onSubmitBudget}>
-						<label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
+						<form onSubmit={this.onSubmitBudget}>
+						<center><label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
 						<input type="text" 
 							placeholder={this.state.budget} 
 							className="form-control" 
 							value={this.state.budget} 
 							onChange={this.onChangeBudget}/>
 						<input type="submit" value="Update" className="btn btn-info" /></label>
+						</center>
 					</form>
 					</div>
 			
