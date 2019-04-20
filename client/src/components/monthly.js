@@ -443,9 +443,9 @@ class TodosList extends Component {
 				</ul>
 				</div>
 				</nav>
-			
+				<div className = "flex">
 					<form onSubmit={this.onSubmit}>
-						<div className = "flex">
+						
 						<center><label>Current Year:
 							<input type="text" 
 								placeholder={this.state.year} 
@@ -456,9 +456,9 @@ class TodosList extends Component {
 								<input type="submit" value="Update" className="btn btn-info" />
 							
 						</label></center>
-						</div>
+						
 					</form>
-				
+				</div>
 			  <h3><center>{"Expenses for " + this.state.year}</center></h3>
 			  
 			  <ColumnChart data={[
