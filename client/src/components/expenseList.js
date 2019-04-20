@@ -88,6 +88,9 @@ class TodosList extends Component {
 		  
         return (
             <div className = "App">
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
 					<img src={logo} width="400" height="80" alt=""/>
 					<div className="collpase navbar-collapse">
@@ -124,7 +127,7 @@ class TodosList extends Component {
 				
                 <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
                 <div className = "spacing">
-				
+				   <h4><span class = "glyphicon glyphicon-asterick"> To edit an expense, just double click on the item you want updated</span><h4>
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray}
