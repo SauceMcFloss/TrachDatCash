@@ -175,15 +175,17 @@ class TodosList extends Component {
 			
 			<div className = "spacing">
 				<div className = "divider">	
-				  <form onSubmit={this.onSubmit}>
-					<center><label>Current Group Code:
-						<input  type="text" 
-						placeholder={this.state.userCode} 
-						className="form-control" 
-						value={this.state.cat} 
-						onChange={this.onChangeGroupCode}/></label>
-					<input type="submit" value="Update" className="btn btn-info" /></center>
-				  </form><center><div>{"Your account's group code is: " + this.state.userCode}</div></center>
+					<form onSubmit={this.onSubmit}>
+						<center><label>Current Group Code:
+							<input  type="text" 
+								placeholder={this.state.userCode} 
+								className="form-control" 
+								value={this.state.cat} 
+								onChange={this.onChangeGroupCode}/>
+							</label>
+							<input type="submit" value="Update" className="btn btn-info" />
+						</center>
+					</form><center><div>{"Your account's group code is: " + this.state.userCode}</div></center>
 				</div>
 				
 			  <h3><center>Group Expenses</center></h3>
