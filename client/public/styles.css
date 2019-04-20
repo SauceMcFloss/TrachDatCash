@@ -3,6 +3,11 @@
 	left: 0;
 	bottom:0;
 	width: 100%;
-	background-color : 
 	
+	color: black;
+	text-align: center;
+	
+}
+.color_back{
+	background-color: #94D6B7;
 }
