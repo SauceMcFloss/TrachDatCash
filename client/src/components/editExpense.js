@@ -190,7 +190,7 @@ class EditExpense extends Component {
         axios.delete('/expenses/delete/'+this.props.match.params.id)
             .then(res => console.log(res.data));
         
-        const pageURL = jwt_decode(localStorage.getItem("jwtTokenPage")).url;
+        const pageURL = jwt_decode(localStorage.getItem("jwtTokenPage")).url.toString();
         this.props.history.push(pageURL);
     }
 
