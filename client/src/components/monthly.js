@@ -357,7 +357,7 @@ class TodosList extends Component {
         });        
     }
 	
-	onChangeBudget(e) {
+	onChangeBudget(e) {			
 		this.setState({
             budget: e.target.value,
 			balance: "-"
@@ -365,7 +365,16 @@ class TodosList extends Component {
     }
 	
 	onSubmitBudget(e) {
-		e.preventDefault();	
+		e.preventDefault();
+
+		// Update user's budget in db
+		const idOfUser = jwt_decode(localStorage.getItem("jwtToken")).id;
+		const obj = {
+            budget: e.target.value
+        };
+        console.log(obj);
+        axios.post('/expenses/updateBudget/'+idOfUser, obj)
+            .then(res => console.log(res.data));		
 
 		this.setState({
 			  budget: parseFloat(this.state.budget).toFixed( 2 ),
