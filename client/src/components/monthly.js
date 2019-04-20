@@ -79,7 +79,7 @@ class TodosList extends Component {
 			Oct: 0,
 			Nov: 0,
 			Dec: 0,
-			budget: 0,
+			budget: jwt_decode(localStorage.getItem("jwtToken")).budget,
 			balance: 0,
 			total: 0
 		};
