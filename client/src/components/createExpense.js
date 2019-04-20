@@ -236,6 +236,7 @@ class CreateExpense extends Component {
                         <label>Description: </label>
                         <input  type="text"
 							className="form-control"
+							placeholder={'Enter description...'}
 							value={this.state.description}
 							onChange={this.onChangeDescription}
 						/>
@@ -245,6 +246,7 @@ class CreateExpense extends Component {
                         <input 
 							type="text" 
 							className="form-control"
+							placeholder={'Enter amount...'}
 							value={this.state.amount}
 							onChange={this.onChangeAmount}
 						/>
@@ -253,7 +255,7 @@ class CreateExpense extends Component {
 					  <label>Category: </label>
 					  <Select
 						name="Category"
-						placeholder={this.state.category}
+						placeholder={'Select category...'}
 						value={selectedCategory}
 						options={optionsCategory}
 						onChange={this.onChangeCategory}
@@ -283,6 +285,7 @@ class CreateExpense extends Component {
                         <label>Year: </label>
                         <input  type="text"
 							className="form-control"
+							placeholder={'Enter year...'}
 							value={this.state.year}
 							onChange={this.onChangeYear}
 						/>
