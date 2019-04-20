@@ -393,7 +393,6 @@ class TodosList extends Component {
 					colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
 				/>
 	
-				<center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
 				<div className="container">
 				  <nav className="navbar navbar-expand-sm navbar-light bg-light">
 					<div className="collpase navbar-collapse">
@@ -411,7 +410,8 @@ class TodosList extends Component {
 					</div>
 				  </nav>
 				</div>
-
+				
+				<h5>{this.state.category + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray} 

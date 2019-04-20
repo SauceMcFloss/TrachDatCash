@@ -445,35 +445,37 @@ class TodosList extends Component {
 				</nav>
 				
 				<div className = "spacing">
-					<div className = "divider">
-						<form onSubmit={this.onSubmit}>
-							<center><label>Current Year:
-								<input type="text" 
-									placeholder={this.state.year} 
-									className="form-control" 
-									value={this.state.year} 
-									onChange={this.onChangeYear}/>
-								</label>
-								<input type="submit" value="Update" className="btn btn-info" />
-							</center>
-						</form>
+					<div className = "flex">
+						<div className = "divider">
+							<form onSubmit={this.onSubmit}>
+								<center><label>Current Year:
+									<input type="text" 
+										placeholder={this.state.year} 
+										className="form-control" 
+										value={this.state.year} 
+										onChange={this.onChangeYear}/>
+									</label>
+									<input type="submit" value="Update" className="btn btn-info" />
+								</center>
+							</form>
+						</div>
+						<h3><center>{"Expenses for " + this.state.year}</center></h3>
+				  
+						<ColumnChart data={[
+							["Jan", this.state.Jan], 
+							["Feb", this.state.Feb], 
+							["Mar", this.state.Mar],
+							["Apr", this.state.Apr],
+							["May", this.state.May],
+							["Jun", this.state.Jun],
+							["Jul", this.state.Jul],
+							["Aug", this.state.Aug],
+							["Sep", this.state.Sep],
+							["Oct", this.state.Oct],
+							["Nov", this.state.Nov],
+							["Dec", this.state.Dec]
+						]} />	
 					</div>
-					<h3><center>{"Expenses for " + this.state.year}</center></h3>
-			  
-					<ColumnChart data={[
-						["Jan", this.state.Jan], 
-						["Feb", this.state.Feb], 
-						["Mar", this.state.Mar],
-						["Apr", this.state.Apr],
-						["May", this.state.May],
-						["Jun", this.state.Jun],
-						["Jul", this.state.Jul],
-						["Aug", this.state.Aug],
-						["Sep", this.state.Sep],
-						["Oct", this.state.Oct],
-						["Nov", this.state.Nov],
-						["Dec", this.state.Dec]
-					]} />	
 					
 					<div className = "divider">
 						<form onSubmit={this.onSubmitBudget}>
@@ -490,7 +492,7 @@ class TodosList extends Component {
 					</div>
 			
 					<h5>Budget: ${this.state.budget} </h5>
-					<h5>Expenses Total: ${parseFloat(this.state.total).toFixed( 2 )} </h5>
+					<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
 					<h5> ---------------------------- </h5>
 					<h5>Balance: ${this.state.balance} </h5>
 			  
@@ -514,7 +516,8 @@ class TodosList extends Component {
 						</div>
 					  </nav>
 					</div>
-				
+					
+					<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
 					<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 					<BootstrapTable 
 						data={this.state.expensesArray} 
