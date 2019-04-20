@@ -73,10 +73,7 @@ class TodosList extends Component {
 				});
     }
 	
-	onRowDoubleClick(row){
-		const { token } = ';
-		localStorage.setItem("jwtToken", token);
-		
+	onRowDoubleClick(row){		
 		this.props.history.push('/edit/'+row._id)
 	}
 
