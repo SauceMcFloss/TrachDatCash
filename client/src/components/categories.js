@@ -322,11 +322,11 @@ class TodosList extends Component {
 			onSortChange: this.onChangeSort,
 			defaultSortName: 'description',
 			defaultSortOrder: 'asc'
-		  };
+		};
 		
 		const cellEdit = {
 			mode: 'dbclick' // double click cell to edit
-		  };
+		};
 		  
         return (
             <div className= "App">
@@ -362,35 +362,38 @@ class TodosList extends Component {
 					</div>
 				</nav>
 			
-			<div className = "spacing">
-				<div className = "divider">
-					<form onSubmit={this.onSubmit}>
-						<center><label>Current Year:
-							<input type="text" 
-								placeholder={this.state.year} 
-								className="form-control" 
-								value={this.state.year} 
-								onChange={this.onChangeYear}/>
-							</label>
-							<input type="submit" value="Update" className="btn btn-info" />
-						</center>
-					</form>
-				</div>
+				<div className = "spacing">
+					<div className = "divider">
+						<form onSubmit={this.onSubmit}>
+							<center><label>Current Year:
+								<input type="text" 
+									placeholder={this.state.year} 
+									className="form-control" 
+									value={this.state.year} 
+									onChange={this.onChangeYear}/>
+								</label>
+								<input type="submit" value="Update" className="btn btn-info" />
+							</center>
+						</form>
+					</div>
 			  
-			  <h3><center>{"Expenses Breakdown for " + this.state.year}</center></h3>
-			  <PieChart data={[
-					["Bills", this.state.bills], 
-					["Dining Out", this.state.dining], 
-					["Education", this.state.education], 
-					["Entertainment", this.state.entertainment], 
-					["Groceries", this.state.groceries], 
-					["Health", this.state.health], 
-					["Shopping", this.state.shopping], 
-					["Transportation", this.state.transportation], 
-					["Other", this.state.other]]
-				} colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}/>
+				<h3><center>{"Expenses Breakdown for " + this.state.year}</center></h3>
+				<PieChart 
+					data={[
+						["Bills", this.state.bills], 
+						["Dining Out", this.state.dining], 
+						["Education", this.state.education], 
+						["Entertainment", this.state.entertainment], 
+						["Groceries", this.state.groceries], 
+						["Health", this.state.health], 
+						["Shopping", this.state.shopping], 
+						["Transportation", this.state.transportation], 
+						["Other", this.state.other]
+					]} 
+					colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
+				/>
 	
-			  <center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
+				<center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
 				<div className="container">
 				  <nav className="navbar navbar-expand-sm navbar-light bg-light">
 					<div className="collpase navbar-collapse">
@@ -419,12 +422,12 @@ class TodosList extends Component {
 					options={ options }
 					pagination 
 					multiColumnSearch>
-					  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
-					  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
-					  <TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
-					  <TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
-					  <TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
-					  <TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+						<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+						<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+						<TableHeaderColumn dataField='month' dataSort>Month</TableHeaderColumn>
+						<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+						<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+						<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
 				</BootstrapTable>
 				
 				</div>

@@ -474,6 +474,7 @@ class TodosList extends Component {
 						["Nov", this.state.Nov],
 						["Dec", this.state.Dec]
 					]} />	
+					
 					<div className = "divider">
 						<form onSubmit={this.onSubmitBudget}>
 							<center><label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
@@ -482,7 +483,8 @@ class TodosList extends Component {
 									className="form-control" 
 									value={this.state.budget} 
 									onChange={this.onChangeBudget}/>
-								<input type="submit" value="Update" className="btn btn-info" /></label>
+								</label>
+								<input type="submit" value="Update" className="btn btn-info" />
 							</center>
 						</form>
 					</div>
@@ -523,12 +525,12 @@ class TodosList extends Component {
 						options={ options }
 						pagination 
 						multiColumnSearch>
-						  <TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
-						  <TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
-						  <TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
-						  <TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
-						  <TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
-						  <TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+							<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+							<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+							<TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
+							<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+							<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+							<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
 					</BootstrapTable>
 				</div>
 			</div>
