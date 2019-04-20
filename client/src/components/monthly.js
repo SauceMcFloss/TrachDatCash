@@ -446,7 +446,7 @@ class TodosList extends Component {
 				
 				<div className = "spacing">
 					<h3><center>{"Expenses for " + this.state.year}</center></h3>
-					<div className = "flex">
+					<div className = "flex_row">
 						<div className = "divider" style={{width: 400}}>
 							<form onSubmit={this.onSubmit}>
 								<label><center>Current Year: </center>
@@ -477,30 +477,7 @@ class TodosList extends Component {
 						]} />	
 					</div>
 					
-					<div className = "flex">
-						<div className="container">
-						  <nav className="navbar navbar-expand-sm navbar-light bg-light">
-							<div className="collpase navbar-collapse">
-							  <ul className="navbar-nav mr-auto">
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jan')}}>Jan</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Feb')}}>Feb</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Mar')}}>Mar</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Apr')}}>Apr</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('May')}}>May</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jun')}}>Jun</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jul')}}>Jul</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Aug')}}>Aug</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Sep')}}>Sep</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Oct')}}>Oct</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Nov')}}>Nov</button>
-								  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Dec')}}>Dec</button>
-							  </ul>
-							</div>
-						  </nav>
-						</div>
-					</div>
-					
-					<div className = "flex">
+					<div className = "flex_row">
 						<div className = "divider">
 							<form onSubmit={this.onSubmitBudget}>
 								<label><center>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}</center>
@@ -520,25 +497,49 @@ class TodosList extends Component {
 							</div>
 						</div>
 						
-						<div>						
-							<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
-							<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
-							<BootstrapTable 
-								data={this.state.expensesArray} 
-								headerStyle={ { background: '#3cb3bb' } }
-								striped hover 
-								version='4' 
-								cellEdit={ cellEdit } 
-								options={ options }
-								pagination 
-								multiColumnSearch>
-									<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
-									<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
-									<TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
-									<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
-									<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
-									<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
-							</BootstrapTable>
+						<div>
+							<div className = "flex_column">
+								<div className="container">
+								  <nav className="navbar navbar-expand-sm navbar-light bg-light">
+									<div className="collpase navbar-collapse">
+									  <ul className="navbar-nav mr-auto">
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jan')}}>Jan</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Feb')}}>Feb</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Mar')}}>Mar</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Apr')}}>Apr</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('May')}}>May</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jun')}}>Jun</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Jul')}}>Jul</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Aug')}}>Aug</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Sep')}}>Sep</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Oct')}}>Oct</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Nov')}}>Nov</button>
+										  <button type="submit" className="btn btn-priority" onClick={() => {this.onChangeMonth('Dec')}}>Dec</button>
+									  </ul>
+									</div>
+								  </nav>
+								</div>
+								<div>
+									<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
+									<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+									<BootstrapTable 
+										data={this.state.expensesArray} 
+										headerStyle={ { background: '#3cb3bb' } }
+										striped hover 
+										version='4' 
+										cellEdit={ cellEdit } 
+										options={ options }
+										pagination 
+										multiColumnSearch>
+											<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+											<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+											<TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
+											<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+											<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+											<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+									</BootstrapTable>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
