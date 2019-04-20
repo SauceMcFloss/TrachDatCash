@@ -1,10 +1,13 @@
 .body{
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: auto;
+	margin-bottom: auto;
 	background-color:  #94D6B7;
+	height: auto;
+	width: auto;
 }
 .container{
 	width: auto;
+	height: auto;
 	max-width: 990px;
 	padding: 0 15px;
 	background-color: #94D6B7;
@@ -16,4 +19,6 @@
 }
 .badge{
 	background-color : #94D6B7;
+	height: auto;
+	width: auto;
 }
