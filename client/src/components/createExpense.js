@@ -265,9 +265,8 @@ class CreateExpense extends Component {
 					<div className="form-group">
 					  <label>Month: </label>
 					  <Select
-						defaultValue={{ label: optionsMonth[today.getMonth()], value: optionsMonth[today.getMonth()] }}
 						name="Month"
-						placeholder={this.state.month}
+						placeholder={this.state.month + '?'}
 						value={selectedMonth}
 						options={optionsMonth}
 						onChange={this.onChangeMonth}
@@ -276,9 +275,8 @@ class CreateExpense extends Component {
 					<div className="form-group">
 					  <label>Day: </label>
 					  <Select
-						defaultValue={{ label: optionsDay[today.getDate() - 1], value: optionsDay[today.getDate() - 1] }}
 						name="Day"
-						placeholder={this.state.day}
+						placeholder={this.state.day + '?'}
 						value={selectedDay}
 						options={optionsDay}
 						onChange={this.onChangeDay}
