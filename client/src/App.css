@@ -79,7 +79,10 @@
 	  
 }
 .spacing{
-	padding: 100px;
+	padding-left: 100px;
+	padding-right:100px;
+	padding-top: 100px;
+	padding-bottom: 50px;
 }
 .spacingpic{
 	padding-top: 10px;
