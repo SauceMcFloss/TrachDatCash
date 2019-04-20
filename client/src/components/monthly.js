@@ -445,16 +445,18 @@ class TodosList extends Component {
 				</nav>
 				<div className = "divider">	
 					<form onSubmit={this.onSubmit}>
+						<div className = "flex">
 						<center><label>Current Year:
 							<input type="text" 
 								placeholder={this.state.year} 
 								className="form-control" 
 								value={this.state.year} 
 								onChange={this.onChangeYear}/>
-							<div className = "pull-right" style = "margin-left: 5px">	
+							
 								<input type="submit" value="Update" className="btn btn-info" />
-							</div>
+							
 						</label></center>
+						</div>
 					</form>
 				</div>
 			  <h3><center>{"Expenses for " + this.state.year}</center></h3>

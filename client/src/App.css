@@ -13,6 +13,10 @@
   height: 100%;
   
 }
+.flex{
+	display: flex;
+	flex-direction: row;
+}
 .body
 {
 	 display:inline-block;
@@ -31,7 +35,7 @@
 	height: 660px;
 }
 .spacing_email{
-	padding-left: 4px;
+	padding-left: 10px;
 }
 
 .navbar-custom{
