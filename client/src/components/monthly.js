@@ -477,7 +477,7 @@ class TodosList extends Component {
 						]} />	
 					</div>
 					
-					<div className = "flex_row">
+					<div className = "flex_row" style={{ marginTop: 50 }}>
 						<div className = "divider">
 							<form onSubmit={this.onSubmitBudget}>
 								<label><center>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}</center>
@@ -519,7 +519,7 @@ class TodosList extends Component {
 									</div>
 								  </nav>
 								</div>
-								<div>
+								<div style={{ marginTop: 20 }}>
 									<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
 									<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 									<BootstrapTable 
