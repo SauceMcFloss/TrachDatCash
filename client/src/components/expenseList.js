@@ -11,7 +11,7 @@ import { logoutUser } from "../actions/authActions";
 import jwt_decode from "jwt-decode";
 
 // Load config keys
-const secretOrKey: "this-is-a-really-long-secret-key-yeehaw";
+const secretOrKey = "this-is-a-really-long-secret-key-yeehaw";
 
 import logo from "../o-logo.png";
 
