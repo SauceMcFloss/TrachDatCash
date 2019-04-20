@@ -7,11 +7,14 @@
 }
 .AppM{
 	background-color:#E3E4E2;
-	height: 1100px;
+	height: auto;
+	width: auto;
 }
 .AppL{
 	background-color:#E3E4E2;
-  height: 100%;
+  height: auto;
+  width: auto;
+  
   
 }
 .flex_row{
