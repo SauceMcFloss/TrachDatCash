@@ -9,11 +9,12 @@ import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
 
 import jwt_decode from "jwt-decode";
-const jwt = require("jsonwebtoken");
 
 import logo from "../o-logo.png";
 
 import  { Redirect } from 'react-router-dom';
+
+const jwt = require("jsonwebtoken");
 
 // Load config keys
 const secretOrKey = "this-is-a-really-long-secret-key-yeehaw";
