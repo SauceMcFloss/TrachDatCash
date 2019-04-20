@@ -103,6 +103,7 @@ class Register extends Component {
                 <span className="red-text">{errors.email}</span>
               </div>
               <div className="form-group">
+				<div className = "spacing_pass">
                 <label htmlFor="password">Password:</label>
 				<input
                   onChange={this.onChange}
@@ -114,6 +115,7 @@ class Register extends Component {
                     invalid: errors.password
                   })}
                 />
+				</div>
                 
                 <span className="red-text">{errors.password}</span>
               </div>
