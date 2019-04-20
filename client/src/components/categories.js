@@ -413,6 +413,7 @@ class TodosList extends Component {
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray} 
+					headerStyle={ { background: '#3cb3bb' } }
 					striped hover 
 					version='4' 
 					cellEdit={ cellEdit } 
