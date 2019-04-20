@@ -92,7 +92,7 @@ class CreateExpense extends Component {
             amount: '',
             category: '',
             selectedMonth: optionsMonth[today.getMonth()],
-            selectedDay: optionsDay[today.getDate() + 1],
+            selectedDay: optionsDay[today.getDate() - 1],
             year: today.getFullYear(),
 			groupCode: ''
         }
@@ -295,11 +295,6 @@ class CreateExpense extends Component {
 							value={selectedCode}
 							options={optionsCode}
 							onChange={this.onChangeGroupCode}
-						/>
-						<input  type="text"
-                                className="form-control"
-                                value={this.state.groupCode}
-                                onChange={this.onChangeGroupCode}
 						/>
                     </div>
 
