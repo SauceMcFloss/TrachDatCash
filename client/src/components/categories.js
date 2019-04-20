@@ -371,15 +371,16 @@ class TodosList extends Component {
 				<div className = "spacing">
 					<h3><center>{"Expenses Breakdown for " + this.state.year}</center></h3>
 					<div className = "flex_row">
-						<div className = "divider">
+						<div className = "divider" style={{width: 400}}>
 							<form onSubmit={this.onSubmit}>
-								<center><label>Current Year:
+								<label><center>Current Year: </center>
 									<input type="text" 
 										placeholder={this.state.year} 
 										className="form-control" 
 										value={this.state.year} 
-										onChange={this.onChangeYear}/>
-									</label>
+										onChange={this.onChangeYear}
+									/>
+								</label>
 									<input type="submit" value="Update" className="btn btn-info" />
 								</center>
 							</form>
