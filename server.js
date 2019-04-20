@@ -325,6 +325,16 @@ expenseRoutes.route('/updateBudget/:id').post(function(req, res){
     });
 });
 
+// @route POST /expenses/userBudget/:id
+// @desc Return specific budget from specified user id
+expenseRoutes.route('/user/:id').get(function(req, res){
+    let id = req.params.id;
+	// Find expense by the specified id
+    User.findById(id, function(err, user){
+        res.json(user);
+    });
+});
+
 // Define standard path extension for route handler
 app.use('/expenses', expenseRoutes);
 
