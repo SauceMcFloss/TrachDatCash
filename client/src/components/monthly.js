@@ -62,7 +62,7 @@ class TodosList extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 		this.onSubmitBudget = this.onSubmitBudget.bind(this);
 		this.onRowDoubleClick = this.onRowDoubleClick.bind(this);
-		
+			
         this.state = {
 			expensesArray: [],
 			month: 'Jan',
@@ -79,7 +79,7 @@ class TodosList extends Component {
 			Oct: 0,
 			Nov: 0,
 			Dec: 0,
-			budget: jwt_decode(localStorage.getItem("jwtToken")).budget,
+			budget: 0,
 			balance: 0,
 			total: 0
 		};
@@ -114,6 +114,16 @@ class TodosList extends Component {
 				});
             })
             .catch(function (error){
+                console.log(error);
+            })
+		
+		axios.get('/expenses/user/'+idOfUser)
+            .then(response => {
+                this.setState({
+                    budget: response.data.budget,
+                })   
+            })
+            .catch(function (error) {
                 console.log(error);
             })
 		
