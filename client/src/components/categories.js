@@ -331,9 +331,9 @@ class TodosList extends Component {
         return (
             <div className= "App">
               <nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
-					<img src={logo} width="400" height="80" alt=""/>
-					<div className="collpase navbar-collapse">
-					  <ul className="navbar-nav mr-auto">
+				<img src={logo} width="400" height="80" alt=""/>
+				<div className="collpase navbar-collapse">
+					<ul className="navbar-nav mr-auto">
 						<li className="navbar-item">
 						  <Link to="/dashboard" className="nav-link">All Expenses</Link>
 						</li>
@@ -349,33 +349,33 @@ class TodosList extends Component {
 						<li className="navbar-item">
 						  <Link to="/group" className="nav-link">Group</Link>
 						</li>
-					  </ul>
-					  <ul className = "navbar-nav ml-auto">
-							<li className = "navbar-item">
-								<button style={{ width: "150px",borderRadius: "2px",letterSpacing: "1.5px",marginTop: "1rem"}}
-					onClick={this.onLogoutClick}
-					className="btn btn-info">
-					<Link to = "login" className = "nav-link">
-					Logout</Link></button>
-				</li>
-				</ul>
-				
-					</div>
-					
-				</nav>
-			  <div className = "divider">
-			  <form onSubmit={this.onSubmit}>
-				<center><label>Current Year:
-					<input type="text" 
-						placeholder={this.state.year} 
-						className="form-control" 
-						value={this.state.year} 
-						onChange={this.onChangeYear} 
-					/>
-					<input type="submit" value="Update" className="btn btn-info" />
-				</label></center>
-			</form>
-			</div>
+					</ul>
+					<ul className = "navbar-nav ml-auto">
+						<li className = "navbar-item">
+							<button style={{ width: "150px",borderRadius: "2px",letterSpacing: "1.5px",marginTop: "1rem"}}
+							onClick={this.onLogoutClick}
+							className="btn btn-info">
+							<Link to = "login" className = "nav-link">
+							Logout</Link></button>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			
+			<div className = "spacing">
+				<div className = "divider">
+					<form onSubmit={this.onSubmit}>
+						<center><label>Current Year:
+							<input type="text" 
+								placeholder={this.state.year} 
+								className="form-control" 
+								value={this.state.year} 
+								onChange={this.onChangeYear} 
+							/>
+							<input type="submit" value="Update" className="btn btn-info" />
+						</label></center>
+					</form>
+				</div>
 			  
 			  <h3><center>{"Expenses Breakdown for " + this.state.year}</center></h3>
 			  <PieChart data={[
@@ -408,8 +408,7 @@ class TodosList extends Component {
 					</div>
 				  </nav>
 				</div>
-				<div className = "spacing">
-				
+
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray} 
