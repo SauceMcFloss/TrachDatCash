@@ -454,22 +454,10 @@ class TodosList extends Component {
 										placeholder={this.state.year} 
 										className="form-control" 
 										value={this.state.year} 
-										onChange={this.onChangeYear}/>
-									</label>
-									<input type="submit" value="Update" className="btn btn-info" />
-								</center>
-							</form>
-							
-							<form onSubmit={this.onSubmitBudget}>
-							<center><label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
-								<input type="text" 
-									placeholder={this.state.budget} 
-									className="form-control" 
-									value={this.state.budget} 
-									onChange={this.onChangeBudget}/>
-								</label>
+										onChange={this.onChangeYear}
+									/>
+								</label></center>
 								<input type="submit" value="Update" className="btn btn-info" />
-							</center>
 							</form>
 						</div>
 				  
@@ -488,11 +476,6 @@ class TodosList extends Component {
 							["Dec", this.state.Dec]
 						]} />	
 					</div>
-			
-					<h5>Budget: ${this.state.budget} </h5>
-					<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
-					<h5> ---------------------------- </h5>
-					<h5>Balance: ${this.state.balance} </h5>
 			  
 					<div className="container">
 					  <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -515,24 +498,47 @@ class TodosList extends Component {
 					  </nav>
 					</div>
 					
-					<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
-					<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
-					<BootstrapTable 
-						data={this.state.expensesArray} 
-						headerStyle={ { background: '#3cb3bb' } }
-						striped hover 
-						version='4' 
-						cellEdit={ cellEdit } 
-						options={ options }
-						pagination 
-						multiColumnSearch>
-							<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
-							<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
-							<TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
-							<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
-							<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
-							<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
-					</BootstrapTable>
+					<div className = "flex">
+						<div>
+							<form onSubmit={this.onSubmitBudget}>
+								<center><label>{"Budget for " + this.state.year + ", " + this.state.month + ": " + " "}
+									<input type="text" 
+										placeholder={this.state.budget} 
+										className="form-control" 
+										value={this.state.budget} 
+										onChange={this.onChangeBudget}/>
+									</label>
+									<input type="submit" value="Update" className="btn btn-info" />
+								</center>
+							</form>
+							<div className = "divider">
+								<h5>Budget: ${this.state.budget} </h5>
+								<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
+								<h5> ---------------------------- </h5>
+								<h5>Balance: ${this.state.balance} </h5>
+							</div>
+						</div>
+						<div>
+							<h5>{this.state.month + " Total: $" + parseFloat(this.state.total).toFixed( 2 )} </h5>
+							<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
+							<BootstrapTable 
+								data={this.state.expensesArray} 
+								headerStyle={ { background: '#3cb3bb' } }
+								striped hover 
+								version='4' 
+								cellEdit={ cellEdit } 
+								options={ options }
+								pagination 
+								multiColumnSearch>
+									<TableHeaderColumn isKey dataField='description' dataSort>Description</TableHeaderColumn>
+									<TableHeaderColumn dataField='amount' dataSort>Amount</TableHeaderColumn>
+									<TableHeaderColumn dataField='category' dataSort>Category</TableHeaderColumn>
+									<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
+									<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
+									<TableHeaderColumn dataField='groupCode' dataSort>Group</TableHeaderColumn>
+							</BootstrapTable>
+						</div>
+					</div>
 				</div>
 			</div>
         )
