@@ -35,7 +35,13 @@
 	height: 660px;
 }
 .spacing_email{
-	padding-left: 10px;
+	padding-left: 12px;
+}
+.spacing_name{
+	padding-left: 12px;
+}
+.spacing_email2{
+	padding-left: 12px;
 }
 
 .navbar-custom{

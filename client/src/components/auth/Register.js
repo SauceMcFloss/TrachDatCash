@@ -70,7 +70,7 @@ class Register extends Component {
          
             <form noValidate onSubmit={this.onSubmit}>
               <div className="form-group">
-                
+                <div className = "spacing_name">
 				<label htmlFor="name">Name:  </label>
 				<input
                   onChange={this.onChange}
@@ -82,11 +82,12 @@ class Register extends Component {
                     invalid: errors.name
                   })}
                 />
-                
+                </div>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="form-group">
-                 <label htmlFor="email">Email: </label>
+                 <div className = "spacing_email2">
+				 <label htmlFor="email">Email: </label>
 				<input
                   onChange={this.onChange}
                   value={this.state.email}
@@ -97,6 +98,7 @@ class Register extends Component {
                     invalid: errors.email
                   })}
                 />
+				</div>
                
                 <span className="red-text">{errors.email}</span>
               </div>
@@ -116,7 +118,7 @@ class Register extends Component {
                 <span className="red-text">{errors.password}</span>
               </div>
               <div className="form-group">
-                <label htmlFor="password2">Confirm Password</label>
+                <label htmlFor="password2">Confirm Password:</label>
 				<input
                   onChange={this.onChange}
                   value={this.state.password2}
