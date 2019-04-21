@@ -520,7 +520,7 @@ class TodosList extends Component {
 								  </nav>
 								</div>
 								<div>
-									<div className  ="spacing_monthly"></div>
+									
 									<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 									<BootstrapTable 
 										data={this.state.expensesArray} 
