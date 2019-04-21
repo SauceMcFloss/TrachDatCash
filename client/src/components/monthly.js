@@ -119,20 +119,14 @@ class TodosList extends Component {
 		
 		axios.get('/expenses/user/'+idOfUser)
             .then(response => {
-                this.setState({
-                    budget: response.data.budget,
-					balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
-                })
-				// Repeat code as a waste of time
-				this.setState({
-                    budget: response.data.budget,
-					balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
-                })
-				this.setState({
-                    budget: response.data.budget,
-					balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
-                })
-				
+				// Run with a delay
+				setTimeout(
+					this.setState({
+						budget: response.data.budget,
+						balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
+					}),
+					10
+				)
             })
             .catch(function (error) {
                 console.log(error);
