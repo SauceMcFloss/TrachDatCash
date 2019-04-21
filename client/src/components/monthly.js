@@ -488,7 +488,6 @@ class TodosList extends Component {
 						</div>
 				  
 						<ColumnChart
-							messages={{empty: "No data"}}
 							prefix = "$"
 							xtitle="Month" 
 							ytitle="Amount Spent"

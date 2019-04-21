@@ -386,9 +386,9 @@ class TodosList extends Component {
 								<input type="submit" value="Update" className="btn btn-info" />
 							</form>
 						</div>
-				  
+						
+						<script src="https://www.gstatic.com/charts/loader.js"></script>
 						<PieChart
-							messages={{empty: "No data"}}
 							prefix = "$"
 							donut = {true}
 							data={[
