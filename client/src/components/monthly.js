@@ -125,7 +125,7 @@ class TodosList extends Component {
 						budget: response.data.budget,
 						balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
 					}),
-					50
+					100
 				)
             })
             .catch(function (error) {
