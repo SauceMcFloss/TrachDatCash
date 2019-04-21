@@ -17,6 +17,7 @@ import EditExpense from "./components/editExpense";
 import Categories from "./components/categories";
 import Monthly from "./components/monthly";
 import Group from "./components/groupPage";
+import Account from "./components/account";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -74,6 +75,7 @@ class App extends Component {
 							<PrivateRoute exact path="/categories" component={Categories} />
 							<PrivateRoute exact path="/monthly" component={Monthly} />
 							<PrivateRoute exact path="/group" component={Group} />
+							<PrivateRoute exact path="/account" component={Account} />
 						</Switch>
 					<Footer/>
 					</div>

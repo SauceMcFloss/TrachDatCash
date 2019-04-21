@@ -212,6 +212,9 @@ class CreateExpense extends Component {
 							<li className="navbar-item">
 								<Link to="/group" className="nav-link">Group</Link>
 							</li>
+							<li className="navbar-item">
+							  <Link to="/account" className="nav-link">Your Account</Link>
+							</li>
 						</ul>
 						<ul className = "navbar-nav ml-auto">
 							<li className = "navbar-item">
