@@ -239,7 +239,7 @@ class EditExpense extends Component {
 					</div>
 				</nav>
 				
-                <h3 align="center">Update Expense</h3>
+                <h1 align="center">Update Expense</h1>
 				<div className = "spacing">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 

@@ -50,11 +50,11 @@ class Landing extends Component {
 					<div className = "right">
 						<center><h2>Here in Track Dat Ca$h...</h2></center>
 					
-						<center><p>You have the option to view your expenses in a personal or group setting</p></center>
-						<center><p>Plan your finances and keep a budget</p></center>
-						<center><p>Track your expenses monthly</p></center>
-						<center><p>Analyze your expenses</p></center>
-						<center><p> Want to get started? Login or Sign up Now!</p></center>
+						<center><h4>You have the option to view your expenses in a personal or group setting</h4></center>
+						<center><h4>Plan your finances and keep a budget</h4></center>
+						<center><h4>Track your expenses monthly</h4></center>
+						<center><h4>Analyze your expenses</h4></center>
+						<center><h4> Want to get started? Login or Sign up Now!</h4></center>
 						
 						<center><button
                   style={{
