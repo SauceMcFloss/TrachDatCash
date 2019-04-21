@@ -121,15 +121,12 @@ class TodosList extends Component {
             .then(response => {
                 this.setState({
                     budget: response.data.budget,
+					balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
                 })   
             })
             .catch(function (error) {
                 console.log(error);
             })
-			
-		this.setState({
-			balance: parseFloat(this.state.budget - this.state.total).toFixed( 2 )
-		})
 		
 		this.updateCharts();
     }
