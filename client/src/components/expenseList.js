@@ -201,7 +201,7 @@ class TodosList extends Component {
 				</nav>
 			
 				<div style={{ marginTop: 50 }}>
-					<h1><center>{this.state.userName + "'s Expenses"</center></h1>
+					<h1><center>{this.state.userName + "'s Expenses"}</center></h1>
 					<center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
 				</div>
 				
