@@ -195,7 +195,8 @@ class TodosList extends Component {
 						</center>
 					</form><center><div>{"Your account's group code is: " + this.state.userCode}</div></center>
 				</div>
-				
+				<div style={{ marginTop: 20 }}>
+				</div>
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray} 
