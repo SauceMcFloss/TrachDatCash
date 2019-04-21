@@ -390,7 +390,7 @@ class TodosList extends Component {
 						<PieChart 
 							data={[
 								["Bills", parseFloat(this.state.bills).toFixed( 2 )], 
-								["Dining Out", parseFloat(this.state.dining).toFixed( 2 )], 
+								["Dining", parseFloat(this.state.dining).toFixed( 2 )], 
 								["Education", parseFloat(this.state.education).toFixed( 2 )], 
 								["Entertainment", parseFloat(this.state.entertainment).toFixed( 2 )], 
 								["Groceries", parseFloat(this.state.groceries).toFixed( 2 )], 
@@ -408,7 +408,7 @@ class TodosList extends Component {
 							<div className="collpase navbar-collapse">
 								<ul className="navbar-nav mr-auto">
 									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Bills')}}>Bills</button>
-									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Dining')}}>Dining Out</button>
+									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Dining')}}>Dining</button>
 									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Education')}}>Education</button>
 									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Entertainment')}}>Entertainment</button>
 									<button type="submit" className="btn btn-priority" onClick={() => {this.onChangeCategory('Groceries')}}>Groceries</button>
