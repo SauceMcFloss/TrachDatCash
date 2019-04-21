@@ -128,7 +128,7 @@ class TodosList extends Component {
             })
 			
 		this.setState({
-			balance: parseFloat(this.state.budget - sum).toFixed( 2 )
+			balance: parseFloat(this.state.budget - this.state.total).toFixed( 2 )
 		})
 		
 		this.updateCharts();
