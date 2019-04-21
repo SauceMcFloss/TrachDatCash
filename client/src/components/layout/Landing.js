@@ -27,17 +27,19 @@ class Landing extends Component {
 					<div className="collpase navbar-collapse">
 					  <ul className="navbar-nav ml-auto">
 						<li className="navbar-item">
-						 <right><button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-info"
-                ><Link to="login" className="nav-link">Login</Link></button></right>
-						</li>
+						<right><button
+							  style={{
+								width: "150px",
+								borderRadius: "3px",
+								letterSpacing: "1.5px",
+								marginTop: "1rem"
+							  }}
+								type="submit"
+								className="btn btn-info">
+						<Link to="login" className="nav-link" style = {{ fontWeight:"300", color: "white"}}>Login</Link></button></right>
+						</li>						
+						
+						
 						</ul>
 					</div>
 					</nav>
@@ -56,16 +58,24 @@ class Landing extends Component {
 						<center><h4>Analyze your expenses</h4></center>
 						<center><h4> Want to get started? Login or Sign up Now!</h4></center>
 						
-						<center><button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-info"
-                ><Link to="register" className="nav-link">Register</Link></button></center>
+						<center><button 
+							style={{
+								width: "150px",
+								borderRadius: "3px",
+								letterSpacing: "1.5px",
+								marginTop: "1rem"
+							}}
+							type="submit"
+							className="btn btn-info">
+							<Link to="register" 
+								className="nav-link"
+								style = {{ 
+									fontWeight:"300", 
+									color: "white"
+								}}
+							>Register</Link>
+						</button></center>
+						
 						<div className = "spacingpic"></div>
 						<center><img src = {logo} width = "50" height = "50" class="img-circle"  alt = ""/></center>
 					</div>
