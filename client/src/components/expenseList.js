@@ -66,6 +66,37 @@ class TodosList extends Component {
             .catch(function (error){
                 console.log(error);
             })
+		// Duplicate POST request a couple times for when new expenses are added to db
+		axios.post('/expenses/getAllExpenses', {
+			id: idOfUser
+		})
+            .then(response => {
+				temp = response.data;
+				temp = sortBy(temp, ['description', 'amount']);
+				sum = sumBy(temp, 'amount');
+                this.setState({ 
+					expensesArray: temp,
+					total: sum
+				});
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+		axios.post('/expenses/getAllExpenses', {
+			id: idOfUser
+		})
+            .then(response => {
+				temp = response.data;
+				temp = sortBy(temp, ['description', 'amount']);
+				sum = sumBy(temp, 'amount');
+                this.setState({ 
+					expensesArray: temp,
+					total: sum
+				});
+            })
+            .catch(function (error){
+                console.log(error);
+            })
     }
 	
 	onChangeSort(sortItem) {
