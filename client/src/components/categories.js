@@ -390,6 +390,7 @@ class TodosList extends Component {
 						<script src="https://www.gstatic.com/charts/loader.js"></script>
 						<PieChart
 							prefix = "$"
+							donut={true}
 							data={[
 								["Bills", parseFloat(this.state.bills).toFixed( 2 )], 
 								["Dining", parseFloat(this.state.dining).toFixed( 2 )], 
