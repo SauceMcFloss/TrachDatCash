@@ -71,7 +71,7 @@ class TodosList extends Component {
 			shopping: 0,
 			transportation: 0,
 			other: 0,
-			totalForPercent: bills + dining + education + entertainment + groceries + health + shopping + transportation + other,
+			totalForPercent: 1,
 			total: 0
 		};
     }
