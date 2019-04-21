@@ -71,6 +71,7 @@ class TodosList extends Component {
 			shopping: 0,
 			transportation: 0,
 			other: 0,
+			totalForPercent: bills + dining + education + entertainment + groceries + health + shopping + transportation + other,
 			total: 0
 		};
     }
@@ -389,19 +390,18 @@ class TodosList extends Component {
 						
 						<script src="https://www.gstatic.com/charts/loader.js"></script>
 						<PieChart
-							prefix = "$"
 							donut={true}
-							legend="right"
+							suffix="%"
 							data={[
-								["Bills", parseFloat(this.state.bills).toFixed( 2 )], 
-								["Dining", parseFloat(this.state.dining).toFixed( 2 )], 
-								["Education", parseFloat(this.state.education).toFixed( 2 )], 
-								["Entertainment", parseFloat(this.state.entertainment).toFixed( 2 )], 
-								["Groceries", parseFloat(this.state.groceries).toFixed( 2 )], 
-								["Health", parseFloat(this.state.health).toFixed( 2 )], 
-								["Shopping", parseFloat(this.state.shopping).toFixed( 2 )], 
-								["Transportation", parseFloat(this.state.transportation).toFixed( 2 )], 
-								["Other", parseFloat(this.state.other).toFixed( 2 )]
+								["Bills", parseFloat(this.state.bills / this.state.totalForPercent).toFixed( 2 )], 
+								["Dining", parseFloat(this.state.dining / this.state.totalForPercent).toFixed( 2 )], 
+								["Education", parseFloat(this.state.education / this.state.totalForPercent).toFixed( 2 )], 
+								["Entertainment", parseFloat(this.state.entertainment / this.state.totalForPercent).toFixed( 2 )], 
+								["Groceries", parseFloat(this.state.groceries / this.state.totalForPercent).toFixed( 2 )], 
+								["Health", parseFloat(this.state.health / this.state.totalForPercent).toFixed( 2 )], 
+								["Shopping", parseFloat(this.state.shopping / this.state.totalForPercent).toFixed( 2 )], 
+								["Transportation", parseFloat(this.state.transportation / this.state.totalForPercent).toFixed( 2 )], 
+								["Other", parseFloat(this.state.other / this.state.totalForPercent).toFixed( 2 )]
 							]} 
 							colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
 						/>
