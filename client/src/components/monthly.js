@@ -126,6 +126,10 @@ class TodosList extends Component {
             .catch(function (error) {
                 console.log(error);
             })
+			
+		this.setState({
+			balance: parseFloat(this.state.budget - sum).toFixed( 2 )
+		})
 		
 		this.updateCharts();
     }
