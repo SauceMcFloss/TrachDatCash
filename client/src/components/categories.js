@@ -22,6 +22,7 @@ var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 
 var temp = [];
 var temp2 = [];
+var tempPercent = 0;
 var sum = 0;
 var sum2 = 0;
 var tempBills = 0;
@@ -59,6 +60,7 @@ class TodosList extends Component {
 		this.updateChart = this.updateChart.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 		this.onRowDoubleClick = this.onRowDoubleClick.bind(this);
+		this.calculatePercentage = this.calculatePercentage.bind(this);
 		
         this.state = {
 			expensesArray: [],
@@ -354,6 +356,11 @@ class TodosList extends Component {
     onRowDoubleClick(row){
 		this.props.history.push('/edit/'+row._id)
 	}
+	
+	calculatePercentage(category){
+		tempPercent = parseFloat(category / this.state.totalForPercent).toFixed( 3 ) * 100;
+		return tempPercent;
+	}
 
     render() {
 		const options = {
@@ -425,15 +432,15 @@ class TodosList extends Component {
 							donut={true}
 							suffix="%"
 							data={[
-								["Bills", parseFloat(this.state.bills / this.state.totalForPercent).toFixed( 2 )], 
-								["Dining", parseFloat(this.state.dining / this.state.totalForPercent).toFixed( 2 )], 
-								["Education", parseFloat(this.state.education / this.state.totalForPercent).toFixed( 2 )], 
-								["Entertainment", parseFloat(this.state.entertainment / this.state.totalForPercent).toFixed( 2 )], 
-								["Groceries", parseFloat(this.state.groceries / this.state.totalForPercent).toFixed( 2 )], 
-								["Health", parseFloat(this.state.health / this.state.totalForPercent).toFixed( 2 )], 
-								["Shopping", parseFloat(this.state.shopping / this.state.totalForPercent).toFixed( 2 )], 
-								["Transportation", parseFloat(this.state.transportation / this.state.totalForPercent).toFixed( 2 )], 
-								["Other", parseFloat(this.state.other / this.state.totalForPercent).toFixed( 2 )]
+								["Bills", this.calculatePercentage(this.state.bills)], 
+								["Dining", this.calculatePercentage(this.state.dining)], 
+								["Education", this.calculatePercentage(this.state.education)], 
+								["Entertainment", this.calculatePercentage(this.state.entertainment)], 
+								["Groceries", this.calculatePercentage(this.state.groceries)], 
+								["Health", this.calculatePercentage(this.state.health)], 
+								["Shopping", this.calculatePercentage(this.state.shopping)], 
+								["Transportation", this.calculatePercentage(this.state.transportation)], 
+								["Other", this.calculatePercentage(this.state.other)]
 							]} 
 							colors ={["#dc4048", "#f6821f","#feb913","#7acdf1","#003f6b","#763585","#d23c77","#ff4f79", "#ff997f"]}
 						/>
