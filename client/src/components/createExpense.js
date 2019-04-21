@@ -215,10 +215,21 @@ class CreateExpense extends Component {
 						</ul>
 						<ul className = "navbar-nav ml-auto">
 							<li className = "navbar-item">
-								<button style={{ width: "150px",borderRadius: "2px",letterSpacing: "1.5px",marginTop: "1rem"}}
+								<button 
+									style={{ 
+										width: "150px",
+										borderRadius: "3px",
+										letterSpacing: "1.5px",
+										marginTop: "1rem"
+									}}
 								onClick={this.onLogoutClick}
 								className="btn btn-info">
-								<Link to = "login" className = "nav-link">
+								<Link to = "login" 
+									className = "nav-link"
+									style = {{ 
+									fontWeight:"300", 
+									color: "white"
+								}}>
 								Logout</Link></button>
 							</li>
 						</ul>
