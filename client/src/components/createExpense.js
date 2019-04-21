@@ -15,7 +15,7 @@ var today = new Date();
 
 const optionsCategory = [
   { value: 'Bills', label: 'Bills' },
-  { value: 'Dining', label: 'Dining Out' },
+  { value: 'Dining', label: 'Dining' },
   { value: 'Education', label: 'Education' },
   { value: 'Entertainment', label: 'Entertainment' },
   { value: 'Groceries', label: 'Groceries' },
@@ -225,7 +225,7 @@ class CreateExpense extends Component {
 					</div>
 				</nav>
 		  
-				<center><h3>Create New Expense</h3></center>
+				<center><h1>Create New Expense</h1></center>
 				<div className = "spacing">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 

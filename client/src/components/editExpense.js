@@ -15,7 +15,7 @@ import logo from "../o-logo.png";
 
 const optionsCategory = [
   { value: 'Bills', label: 'Bills' },
-  { value: 'Dining', label: 'Dining Out' },
+  { value: 'Dining', label: 'Dining' },
   { value: 'Education', label: 'Education' },
   { value: 'Entertainment', label: 'Entertainment' },
   { value: 'Groceries', label: 'Groceries' },
@@ -241,7 +241,7 @@ class EditExpense extends Component {
 					</div>
 				</nav>
 				
-                <h3 align="center">Update Expense</h3>
+                <h1 align="center">Update Expense</h1>
 				<div className = "spacing">
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
