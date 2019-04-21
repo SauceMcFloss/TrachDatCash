@@ -34,6 +34,7 @@ class TodosList extends Component {
 		
         this.state = {
 			expensesArray: [],
+			userName: '',
 			total: 0
 		};
     }
@@ -95,6 +96,34 @@ class TodosList extends Component {
 				});
             })
             .catch(function (error){
+                console.log(error);
+            })
+			
+		axios.get('/expenses/user/'+idOfUser)
+            .then(response => {
+				// Run with a delay
+				setTimeout(
+					this.setState({
+						userName: response.data.name
+					}),
+					500
+				)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+		// Duplicate GET request for timing delay to make all values correct
+		axios.get('/expenses/user/'+idOfUser)
+            .then(response => {
+				// Run with a delay
+				setTimeout(
+					this.setState({
+						userName: response.data.name
+					}),
+					500
+				)
+            })
+            .catch(function (error) {
                 console.log(error);
             })
     }
@@ -172,7 +201,7 @@ class TodosList extends Component {
 				</nav>
 			
 				<div style={{ marginTop: 50 }}>
-					<h1><center>All Expenses</center></h1>
+					<h1><center>{this.state.userName + "'s Expenses"</center></h1>
 					<center><h5>Total: ${this.state.total.toFixed(2)} </h5></center>
 				</div>
 				
