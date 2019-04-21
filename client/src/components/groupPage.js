@@ -184,7 +184,6 @@ class TodosList extends Component {
 			<div className = "spacing">
 			<h5><center>{"Your account's group code is: " + this.state.userCode}</center></h5>
 			</div>
-			<div className = "spacing">
 				<div className = "divider">	
 					<form onSubmit={this.onSubmit}>
 						<center><label>Current Group Code:
@@ -217,7 +216,6 @@ class TodosList extends Component {
 						<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
 						<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
 				</BootstrapTable>
-				</div>
             </div>
         )
     }
