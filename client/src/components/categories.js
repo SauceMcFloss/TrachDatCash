@@ -368,7 +368,7 @@ class TodosList extends Component {
 					</div>
 				</nav>
 				
-				<div style={{ marginTop: 20 }}>
+				<div style={{ marginTop: 50 }}>
 					<h1><center>{"Expenses Breakdown for " + this.state.year}</center></h1>
 				</div>
 				<div className = "spacing">
