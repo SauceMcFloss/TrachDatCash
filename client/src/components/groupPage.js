@@ -182,6 +182,8 @@ class TodosList extends Component {
 			</div>
 			
 			<div className = "spacing">
+			<h5><center>{"Your account's group code is: " + this.state.userCode}</center></h5>
+			</div>
 				<div className = "divider">	
 					<form onSubmit={this.onSubmit}>
 						<center><label>Current Group Code:
@@ -193,9 +195,10 @@ class TodosList extends Component {
 							</label>
 							<input type="submit" value="Update" className="btn btn-info" />
 						</center>
-					</form><center><div>{"Your account's group code is: " + this.state.userCode}</div></center>
+					</form>
 				</div>
-				
+				<div style={{ marginTop: 20 }}>
+				</div>
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray} 
@@ -213,7 +216,6 @@ class TodosList extends Component {
 						<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
 						<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
 				</BootstrapTable>
-				</div>
             </div>
         )
     }
