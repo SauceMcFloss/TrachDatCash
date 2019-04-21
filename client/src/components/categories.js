@@ -358,7 +358,7 @@ class TodosList extends Component {
 	}
 	
 	calculatePercentage(category){
-		tempPercent = parseFloat(category / this.state.totalForPercent).toFixed( 3 ) * 100;
+		tempPercent = parseFloat((category / this.state.totalForPercent) * 100).toFixed( 1 );
 		return tempPercent;
 	}
 
