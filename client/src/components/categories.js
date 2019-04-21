@@ -387,7 +387,10 @@ class TodosList extends Component {
 							</form>
 						</div>
 				  
-						<PieChart 
+						<PieChart
+							messages={{empty: "No data"}}
+							prefix = "$"
+							donut = {true}
 							data={[
 								["Bills", parseFloat(this.state.bills).toFixed( 2 )], 
 								["Dining", parseFloat(this.state.dining).toFixed( 2 )], 
