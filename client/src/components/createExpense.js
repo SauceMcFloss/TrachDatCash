@@ -15,7 +15,7 @@ var today = new Date();
 
 const optionsCategory = [
   { value: 'Bills', label: 'Bills' },
-  { value: 'Dining', label: 'Dining Out' },
+  { value: 'Dining', label: 'Dining' },
   { value: 'Education', label: 'Education' },
   { value: 'Entertainment', label: 'Entertainment' },
   { value: 'Groceries', label: 'Groceries' },
