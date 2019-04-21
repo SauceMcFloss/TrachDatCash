@@ -21,7 +21,9 @@ var BootstrapTable = ReactBsTable.BootstrapTable;
 var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 
 var temp = [];
+var temp2 = [];
 var sum = 0;
+var sum2 = 0;
 var tempBills = 0;
 var tempDining = 0;
 var tempEducation = 0;
@@ -100,6 +102,21 @@ class TodosList extends Component {
                 this.setState({ 
 					expensesArray: temp,
 					total: sum
+				});
+            })
+            .catch(function (error){
+                console.log(error);
+            })
+		
+		axios.post('/expenses/year', {
+			id: idOfUser,
+			newYear: this.state.year
+		})
+            .then(response => {
+				temp2 = response.data;
+				sum2 = sumBy(temp2, 'amount');
+                this.setState({ 
+					totalForPercent: sum2
 				});
             })
             .catch(function (error){
@@ -315,6 +332,21 @@ class TodosList extends Component {
             .catch(function (error){
                 console.log(error);
             })	
+		
+		axios.post('/expenses/year', {
+			id: idOfUser,
+			newYear: this.state.year
+		})
+            .then(response => {
+				temp2 = response.data;
+				sum2 = sumBy(temp2, 'amount');
+                this.setState({ 
+					totalForPercent: sum2
+				});
+            })
+            .catch(function (error){
+                console.log(error);
+            })
 			
 		this.updateChart();
     }

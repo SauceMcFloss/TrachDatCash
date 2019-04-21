@@ -75,7 +75,7 @@ expenseRoutes.route("/getAllExpenses").post(function(req, res){
 });
 
 // @route POST /expenses/category
-// @desc Return all expenses for specified category
+// @desc Return all expenses for specified category in a given year
 expenseRoutes.post("/category", (req, res, next) => {
 	const usersId = req.body.id.toString();
 	const usersCategory = req.body.newCategory;
@@ -91,8 +91,24 @@ expenseRoutes.post("/category", (req, res, next) => {
 	});
 });
 
+// @route POST /expenses/year
+// @desc Return all expenses for a specified year
+expenseRoutes.post("/year", (req, res, next) => {
+	const usersId = req.body.id.toString();
+	const usersYear = req.body.newYear;
+	// Find expenses by specified user, category, and year
+	Expense.find({userId: usersId, year: usersYear}, function(err, expenses){
+		if(err){
+			console.log(err);
+		}
+		else{
+			res.json(expenses);
+		}
+	});
+});
+
 // @route POST /expenses/month
-// @desc Return all expenses for specified month
+// @desc Return all expenses for specified month in a given year
 expenseRoutes.route("/month").post(function(req, res){
 	const usersId = req.body.id.toString();
 	const usersMonth = req.body.newMonth;
