@@ -131,6 +131,35 @@ class TodosList extends Component {
             .catch(function (error) {
                 console.log(error);
             })
+		// Duplicate GET request for timing delay to make all values correct
+		axios.get('/expenses/user/'+idOfUser)
+            .then(response => {
+				// Run with a delay
+				setTimeout(
+					this.setState({
+						budget: response.data.budget,
+						balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
+					}),
+					500
+				)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+			axios.get('/expenses/user/'+idOfUser)
+            .then(response => {
+				// Run with a delay
+				setTimeout(
+					this.setState({
+						budget: response.data.budget,
+						balance: parseFloat(response.data.budget - this.state.total).toFixed( 2 )
+					}),
+					500
+				)
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
 		
 		this.updateCharts();
     }
