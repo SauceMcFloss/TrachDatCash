@@ -193,7 +193,7 @@ class TodosList extends Component {
 							</label>
 							<input type="submit" value="Update" className="btn btn-info" />
 						</center>
-					</form><center><div>{"Your account's group code is: " + <b>this.state.userCode</b>}</div></center>
+					</form><center><div>{"Your account's group code is: " + this.state.userCode.bold()}</div></center>
 				</div>
 				<div style={{ marginTop: 20 }}>
 				</div>
