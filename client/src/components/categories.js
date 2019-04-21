@@ -391,6 +391,7 @@ class TodosList extends Component {
 						<PieChart
 							prefix = "$"
 							donut={true}
+							legend="right"
 							data={[
 								["Bills", parseFloat(this.state.bills).toFixed( 2 )], 
 								["Dining", parseFloat(this.state.dining).toFixed( 2 )], 
