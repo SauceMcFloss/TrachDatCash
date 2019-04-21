@@ -24,7 +24,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Footer from "./components/footer";
 
 // Load images
-import picture from "./fin_plan.jpg";
+
 import logo2 from "./o-logo.png";
 import logo from "./money_sign.png";
 
