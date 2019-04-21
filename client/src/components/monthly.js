@@ -469,7 +469,7 @@ class TodosList extends Component {
 		  };
 		  
         return (
-            <div className = "AppM">
+            <div className = "App">
 				<nav className="navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
 					<img src={logo} width="400" height="80" alt=""/>
 					<div className="collpase navbar-collapse">
