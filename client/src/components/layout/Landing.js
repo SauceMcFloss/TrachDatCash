@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import '../../App.css';
 
 import logo2 from "../../o-logo.png";
-import mobile from "../google.png";
+import mobile from "../../google.png";
 import logo from "../../money_sign.png";
 import picture from "../../calc.jpg";
 import description from "../../pic.PNG";
