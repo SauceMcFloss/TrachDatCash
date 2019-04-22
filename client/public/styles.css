@@ -8,7 +8,11 @@
 	background-color: #94D6B7;
 	color: black;
 	text-align: center;
-	
-	
-	
+}
+
+.phantom{
+  display: block,
+  padding: 20px,
+  height: 100%,
+  width: 100%,
 }
