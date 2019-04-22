@@ -242,9 +242,10 @@ class EditExpense extends Component {
 										marginTop: "1rem"
 									}}
 								onClick={this.onLogoutClick}
-								className="btn btn-info">
+								className="btn btn-info" >
 								<Link to = "login" 
-									className = "nav-link"
+									className = "nav-link" 
+									class = "rounded"
 									style = {{ 
 									fontWeight:"300", 
 									color: "white"

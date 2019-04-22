@@ -9,7 +9,7 @@ class Footer extends React.Component{
 			
 				
 					<center><p> Track Dat Ca$h, Group 13</p></center>
-				
+					<center><p> Orlando, Fl</p></center>
 			
 		</footer>
 		

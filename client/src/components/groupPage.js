@@ -163,9 +163,6 @@ class TodosList extends Component {
 							<li className="navbar-item">
 								<Link to="/group" className="nav-link">Group</Link>
 							</li>
-							<li className="navbar-item">
-							  <Link to="/account" className="nav-link">Your Account</Link>
-							</li>
 						</ul>
 						<ul className = "navbar-nav ml-auto">
 							<li className = "navbar-item">
@@ -177,9 +174,10 @@ class TodosList extends Component {
 										marginTop: "1rem"
 									}}
 								onClick={this.onLogoutClick}
-								className="btn btn-info">
+								className="btn btn-info" >
 								<Link to = "login" 
-									className = "nav-link"
+									className = "nav-link" 
+									class = "rounded"
 									style = {{ 
 									fontWeight:"300", 
 									color: "white"
@@ -198,7 +196,7 @@ class TodosList extends Component {
 			<div className = "spacing">
 			<h5><center>{"Your account's group code is: " + this.state.userCode}</center></h5>
 			</div>
-				<div className = "divider">	
+				<div className = "dividerG">	
 					<form onSubmit={this.onSubmit}>
 						<center><label>Current Group Code:
 							<input  type="text" 
@@ -213,6 +211,7 @@ class TodosList extends Component {
 				</div>
 				<div style={{ marginTop: 20 }}>
 				</div>
+				<div className = "spacing">
 				<link rel="stylesheet" href="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table-all.min.css"></link>
 				<BootstrapTable 
 					data={this.state.expensesArray} 
@@ -230,6 +229,7 @@ class TodosList extends Component {
 						<TableHeaderColumn dataField='day' dataSort>Day</TableHeaderColumn>
 						<TableHeaderColumn dataField='year' dataSort>Year</TableHeaderColumn>
 				</BootstrapTable>
+				</div>
             </div>
         )
     }
