@@ -19,7 +19,8 @@ class Landing extends Component {
         super(props);
 
         this.state = {
-			userName: ''
+			userName: '',
+			userEmail: ''
 		};
     }
 	
@@ -36,7 +37,8 @@ class Landing extends Component {
 				// Run with a delay
 				setTimeout(
 					this.setState({
-						userName: response.data.name
+						userName: response.data.name,
+						userEmail: response.data.email
 					}),
 					500
 				)
@@ -50,7 +52,8 @@ class Landing extends Component {
 				// Run with a delay
 				setTimeout(
 					this.setState({
-						userName: response.data.name
+						userName: response.data.name,
+						userEmail: response.data.email
 					}),
 					500
 				)
@@ -95,16 +98,14 @@ class Landing extends Component {
 				<div className = "spacingL">
 				<div className = "row">
 					<div className = "Picture">
-							<center><h1><img src = {picture} width = "400" height = "300" class = "rounded" alt = ""/></h1></center>
-						</div>
+						<center><h1><img src = {picture} width = "400" height = "300" class = "rounded" alt = ""/></h1></center>
+					</div>
 				
 					<div className = "right">
-						<center><h2>{"Welcome to Track Dat Ca$h... " + this.state.userName}</h2></center>
+						<center><h2>{this.state.userName + "'s Account Info"}</h2></center>
 					
-						<center><h4>You have the option to view your expenses in a personal or group setting</h4></center>
-						<center><h4>Plan your finances and keep a budget</h4></center>
-						<center><h4>Track your expenses monthly</h4></center>
-						<center><h4>Analyze your expenses</h4></center>
+						<center><h5>{"Your name: " + this.state.userName}</h5></center>
+						<center><h5>{"Your email: " + this.state.userEmail}</h5></center>
 						
 						<div className = "spacingpic"></div>
 						<center><img src = {logo} width = "50" height = "50" class="img-circle"  alt = ""/></center>

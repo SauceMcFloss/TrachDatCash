@@ -162,19 +162,19 @@ class TodosList extends Component {
 					<div className="collpase navbar-collapse">
 						<ul className="navbar-nav mr-auto">
 							<li className="navbar-item">
-							  <Link to="/dashboard" className="nav-link">All Expenses</Link>
+								<Link to="/dashboard" className="nav-link">All Expenses</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/create" className="nav-link">Create Expense</Link>
+								<Link to="/create" className="nav-link">Create Expense</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/categories" className="nav-link">Categories</Link>
+								<Link to="/categories" className="nav-link">Category Page</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/monthly" className="nav-link">Monthly</Link>
+								<Link to="/monthly" className="nav-link">Monthly Page</Link>
 							</li>
 							<li className="navbar-item">
-							  <Link to="/group" className="nav-link">Group</Link>
+								<Link to="/group" className="nav-link">Group Page</Link>
 							</li>
 							<li className="navbar-item">
 							  <Link to="/account" className="nav-link">Your Account</Link>
