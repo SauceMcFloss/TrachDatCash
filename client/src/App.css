@@ -85,6 +85,14 @@
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
+
+.landing_spacing{
+	padding-left: 100px;
+	padding-right:100px;
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+
 .spacingpic{
 	padding-top: 10px;
 }

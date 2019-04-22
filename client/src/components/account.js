@@ -71,7 +71,7 @@ class Landing extends Component {
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
 					<nav className = "navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
-					<h1><img src = {logo2} width = "900" height = "80"  alt = ""/></h1>
+					<h1><img src = {logo2} width = "400" height = "80"  alt = ""/></h1>
 					<div className="collpase navbar-collapse">
 					  <ul className="navbar-nav ml-auto">
 						<li className="navbar-item">
@@ -99,7 +99,7 @@ class Landing extends Component {
 				<div className = "spacingL">
 				<div className = "row">
 					<div className = "Picture">
-						<center><h1><img src = {picture} width = "400" height = "300" class = "rounded" alt = ""/></h1></center>
+						<center><h1><img src = {picture} width = "900" height = "300" class = "rounded" alt = ""/></h1></center>
 					</div>
 				
 					<div className = "right">
