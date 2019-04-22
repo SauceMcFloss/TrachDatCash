@@ -104,17 +104,20 @@ class Landing extends Component {
 				
 					<div className = "right">
 						<center><h2>{this.state.userName + "'s Account Info"}</h2></center>
-					
+						
+						<div className = "spacingpic"></div>
+						
+						<center><h5>{"Your name: " + this.state.userName}</h5></center>
+						<center><h5>{"Your email: " + this.state.userEmail}</h5></center>
+						
 						<div className = "spacingpic"></div>
 							<center><img src = {logo} 
 								width = "50" 
 								height = "50" 
 								class="img-circle"  
-								alt = ""/></center>
-						</div>
-						
-						<center><h5>{"Your name: " + this.state.userName}</h5></center>
-						<center><h5>{"Your email: " + this.state.userEmail}</h5></center>
+								alt = ""/>
+							</center>
+					</div>
 					</div>
 				</div>
 		</div>

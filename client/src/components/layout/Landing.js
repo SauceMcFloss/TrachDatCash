@@ -45,17 +45,13 @@ class Landing extends Component {
 					</nav>
 				<div className = "spacingL">
 				<div className = "row">
-					<div className = "Picture">
-						<center><h1><img src = {mobile} 
-							width = "150" 
-							height = "150" 
-							class = "rounded" 
-							alt = ""/></h1></center>
-						<center><h5>Click to download the android app!</h5></center>
-					</div>
 					
 					<a href='https://play.google.com/store/apps/details?id=com.yeethaw.trackdatcash&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-					<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+					<img 
+						width = "300" 
+						height = "100"
+						alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
+					</a>
 				
 					<div className = "right">
 						<center><h2>Here in Track Dat Ca$h...</h2></center>
