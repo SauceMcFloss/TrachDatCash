@@ -46,11 +46,13 @@ class Landing extends Component {
 			<div className = "landing_spacing">
 			<Container>	
 			<Row>
-				<Col sm={3}>
+				<Col sm={{span: 3, offset: 0}}>
+					<h4 style={{ padding: 50 }}> Get the app! </h4>
 					<a href='https://play.google.com/store/apps/details?id=com.yeethaw.trackdatcash&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-					<img style={{ padding: 50 }}
-						width = "300" 
-						height = "100"
+					<img
+						className = "google"
+						width = "200" 
+						height = "80"
 						alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
 					</a>
 				</Col>
@@ -72,7 +74,7 @@ class Landing extends Component {
 					</center>
 				</Col>
 				<Col sm={3}>
-				<div style={{ padding: 50 }}>
+				<div style={{ marginTop: 50 }}>
 					<center><h4> Want to get started? </h4></center>
 					<center><h4> Login or Sign up Now! </h4></center>
 					<center><button 

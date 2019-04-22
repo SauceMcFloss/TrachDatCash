@@ -48,8 +48,10 @@
 	display: inline-block;
 }
 .AppRegister{
-	 background-color:#E3E4E2;
+	background-color:#E3E4E2;
 	height: 660px;
+	padding-top: 100px;
+	padding-bottom: 620px;
 }
 .spacing_email{
 	padding-left: 24px;
@@ -87,11 +89,13 @@
 	padding-bottom: 50px;
 }
 
+.google{
+	margin-top: -80px;
+}
+
 .landing_spacing{
-	padding-left: 50px;
-	padding-right:50px;
-	padding-top: 200px;
-	padding-bottom: 200px;
+	padding-top: 150px;
+	padding-bottom: 300px;
 }
 
 .spacingpic{
@@ -102,8 +106,6 @@
 	font-family: 'Script';
 	
 	font-size: 20px;
-	
-	
 }
 
     
@@ -135,6 +137,8 @@
 .AppLogin{
   background-color:#E3E4E2;
   height: 660px;
+  padding-top: 100px;
+  padding-bottom: 620px;
 }
 .right{
 	padding-right:90px;

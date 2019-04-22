@@ -55,12 +55,14 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
+		<div className = "App">
+		<nav className = "navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
+			<h1><img src = {logo2} width = "400" height = "80"  alt = ""/></h1>
+		</nav>
+		
       <div className="AppRegister">
 					
-		<center><div className = "body">
-			<center><h1><img src = {logo2} width = "400" height = "80" class = "rounded" alt = ""/></h1></center>
-          
-            
+		<center><div className = "body">          
               <h4>
                 <b>Register</b> below
               </h4>
@@ -151,7 +153,7 @@ class Register extends Component {
             </form>
           </div>
 		  </center>
-        
+        </div>
       </div>
     );
   }

@@ -11,8 +11,6 @@
 }
 
 .phantom{
-  display: block,
-  padding: 20px,
-  height: 100%,
-  width: 100%,
+  display: block;
+  padding: 20px;
 }
