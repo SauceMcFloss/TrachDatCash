@@ -15,8 +15,6 @@ class Landing extends Component {
   render() {
     return (
 		<div className= "App">
-			
-		
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
@@ -38,13 +36,12 @@ class Landing extends Component {
 								className="btn btn-info">
 						<Link to="login" className="nav-link" style = {{ fontWeight:"300", color: "white"}}>Login</Link></button></right>
 						</li>						
-						
-						
 						</ul>
 					</div>
 					</nav>
-				<div className = "spacingL">
-				<div className = "row">
+					
+					<div className = "spacingL">
+					<div className = "row">
 					
 					<a href='https://play.google.com/store/apps/details?id=com.yeethaw.trackdatcash&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
 					<img 
@@ -69,25 +66,25 @@ class Landing extends Component {
 								class="img-circle"  
 								alt = ""/>
 							</center>
-						</div>
+					</div>
 						
-						<center><button 
-							style={{
-								width: "150px",
-								borderRadius: "3px",
-								letterSpacing: "1.5px",
-								marginTop: "1rem"
+					<center><button 
+						style={{
+							width: "150px",
+							borderRadius: "3px",
+							letterSpacing: "1.5px",
+							marginTop: "1rem"
+						}}
+						type="submit"
+						className="btn btn-info">
+						<Link to="register" 
+							className="nav-link"
+							style = {{ 
+								fontWeight:"300", 
+								color: "white"
 							}}
-							type="submit"
-							className="btn btn-info">
-							<Link to="register" 
-								className="nav-link"
-								style = {{ 
-									fontWeight:"300", 
-									color: "white"
-								}}
-							>Register</Link>
-						</button></center>
+						>Register</Link>
+					</button></center>
 				</div>
 				</div>
 		</div>
