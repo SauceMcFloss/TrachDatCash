@@ -46,9 +46,16 @@ class Landing extends Component {
 				<div className = "spacingL">
 				<div className = "row">
 					<div className = "Picture">
-							<center><h1><img src = {mobile} width = "300" height = "300" class = "rounded" alt = ""/></h1></center>
-							<center><h5>Click to download the android app!</h5></center>
-						</div>
+						<center><h1><img src = {mobile} 
+							width = "150" 
+							height = "150" 
+							class = "rounded" 
+							alt = ""/></h1></center>
+						<center><h5>Click to download the android app!</h5></center>
+					</div>
+					
+					<a href='https://play.google.com/store/apps/details?id=com.yeethaw.trackdatcash&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+					<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 				
 					<div className = "right">
 						<center><h2>Here in Track Dat Ca$h...</h2></center>
@@ -58,6 +65,15 @@ class Landing extends Component {
 						<center><h4>Track your expenses monthly</h4></center>
 						<center><h4>Analyze your expenses</h4></center>
 						<center><h4> Want to get started? Login or Sign up Now!</h4></center>
+						
+						<div className = "spacingpic"></div>
+							<center><img src = {logo} 
+								width = "50" 
+								height = "50" 
+								class="img-circle"  
+								alt = ""/>
+							</center>
+						</div>
 						
 						<center><button 
 							style={{
@@ -76,10 +92,6 @@ class Landing extends Component {
 								}}
 							>Register</Link>
 						</button></center>
-						
-						<div className = "spacingpic"></div>
-						<center><img src = {logo} width = "50" height = "50" class="img-circle"  alt = ""/></center>
-					</div>
 				</div>
 				</div>
 		</div>
