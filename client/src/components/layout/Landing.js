@@ -46,7 +46,7 @@ class Landing extends Component {
 			<div className = "landing_spacing">
 			<Container>	
 			<Row>
-				<Col>
+				<Col sm={3}>
 					<a href='https://play.google.com/store/apps/details?id=com.yeethaw.trackdatcash&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
 					<img 
 						width = "300" 
@@ -54,7 +54,7 @@ class Landing extends Component {
 						alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
 					</a>
 				</Col>
-				<Col>
+				<Col sm={6}>
 					<center><h2>Here in Track Dat Ca$h...</h2></center>
 				
 					<center><h4>You have the option to view your expenses in a personal or group setting</h4></center>
@@ -71,7 +71,7 @@ class Landing extends Component {
 						alt = ""/>
 					</center>
 				</Col>
-				<Col>
+				<Col sm={3}>
 					<center><h4> Want to get started? </h4></center>
 					<center><h4> Login or Sign up Now! </h4></center>
 					<center><button 

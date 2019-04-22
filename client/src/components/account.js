@@ -96,7 +96,7 @@ class Landing extends Component {
 						</ul>
 					</div>
 					</nav>
-				<div className = "spacingL">
+				<div className = "landing_spacing">
 				<div className = "row">
 					<div className = "Picture">
 						<center><h1><img src = {picture} width = "900" height = "300" class = "rounded" alt = ""/></h1></center>
