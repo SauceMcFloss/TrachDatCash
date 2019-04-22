@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import '../App.css';
 
 import logo2 from "../o-logo.png";
+import mobile from "../google.png";
 import logo from "../money_sign.png";
 import picture from "../calc.jpg";
 import description from "../pic.PNG";
@@ -70,7 +71,7 @@ class Landing extends Component {
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"></link>
 					<nav className = "navbar navbar-expand-sm navbar-light navbar-custom sticky-top">
-					<h1><img src = {logo2} width = "400" height = "80"  alt = ""/></h1>
+					<h1><img src = {logo2} width = "900" height = "80"  alt = ""/></h1>
 					<div className="collpase navbar-collapse">
 					  <ul className="navbar-nav ml-auto">
 						<li className="navbar-item">

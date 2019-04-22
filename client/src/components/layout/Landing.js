@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import '../../App.css';
 
 import logo2 from "../../o-logo.png";
+import mobile from "../google.png";
 import logo from "../../money_sign.png";
 import picture from "../../calc.jpg";
 import description from "../../pic.PNG";
@@ -45,7 +46,8 @@ class Landing extends Component {
 				<div className = "spacingL">
 				<div className = "row">
 					<div className = "Picture">
-							<center><h1><img src = {picture} width = "400" height = "300" class = "rounded" alt = ""/></h1></center>
+							<center><h1><img src = {mobile} width = "300" height = "300" class = "rounded" alt = ""/></h1></center>
+							<center><h5>Click to download the android app!</h5></center>
 						</div>
 				
 					<div className = "right">
